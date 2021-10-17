@@ -1,13 +1,14 @@
 import { AppProps } from "next/app";
-
-import "../styles/globals.css";
-
-import "react-notion/src/styles.css";
-import "prismjs/themes/prism-tomorrow.css";
-
-import "../styles.css";
+import splitbee from "@splitbee/web";
 import Header from "../components/header";
 import Footer from "../components/footer";
+
+import "../styles/globals.css";
+import "react-notion/src/styles.css";
+import "prismjs/themes/prism-tomorrow.css";
+import "../styles.css";
+
+splitbee.init();
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
