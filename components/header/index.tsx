@@ -1,5 +1,6 @@
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,10 +11,10 @@ const user = {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 const navigation = [
-  { name: "📝 Blog", href: "/blog", current: true },
-  { name: "📚 Reading list", href: "/reading-list", current: false },
-  { name: "💡 Projects", href: "/project", current: false },
-  { name: "🤷‍♂️ Me", href: "/me", current: false },
+  { name: "📝 Blog", href: "/blog" },
+  { name: "📚 Reading list", href: "/reading-list" },
+  { name: "💡 Projects", href: "/project" },
+  { name: "🤷‍♂️ Me", href: "/me" },
 ];
 // const userNavigation = [
 //   { name: "Your Profile", href: "#" },
@@ -26,6 +27,10 @@ function classNames(...classes: string[]) {
 }
 
 export default function Header() {
+  const router = useRouter();
+
+  console.log(router);
+
   return (
     <Disclosure as="nav" className="bg-white border-b border-gray-200">
       {({ open }) => (
@@ -44,12 +49,12 @@ export default function Header() {
                       key={item.name}
                       href={item.href}
                       className={classNames(
-                        item.current
+                        router.pathname === item.href
                           ? "border-indigo-500 text-gray-900"
                           : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700",
                         "inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                       )}
-                      aria-current={item.current ? "page" : undefined}
+                      aria-current={router.pathname === item.href}
                     >
                       {item.name}
                     </a>
@@ -95,12 +100,12 @@ export default function Header() {
                   key={item.name}
                   href={item.href}
                   className={classNames(
-                    item.current
+                    router.pathname === item.href
                       ? "bg-indigo-50 border-indigo-500 text-indigo-700"
                       : "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800",
                     "block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
                   )}
-                  aria-current={item.current ? "page" : undefined}
+                  aria-current={router.pathname === item.href}
                 >
                   {item.name}
                 </a>
