@@ -34,9 +34,9 @@ export async function getStaticProps() {
 function BlogList({ items }: { items: ReadingList[] }) {
   return (
     <div className="container mx-auto mt-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 justify-around align-top">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 justify-around align-top px-2">
         {items.map((item) => (
-          <div className="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mx-auto p-2">
+          <div className="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mx-auto">
             <a href="#">
               <img
                 className="rounded-t-lg"
