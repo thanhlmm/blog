@@ -32,8 +32,9 @@ const BlogPost: React.FC<{ post: Post; blocks: BlockMapType }> = ({
   if (!post) return null;
 
   return (
-    <div className="content">
-      <h1>{post.title}</h1>
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+      <h1 className="font-bold text-2xl text-gray-700 mb-4">{post.title}</h1>
+      <hr />
       <NotionRenderer blockMap={blocks} />
     </div>
   );
