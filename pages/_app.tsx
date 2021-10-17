@@ -8,7 +8,10 @@ import "react-notion/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
 import "../styles.css";
 
-splitbee.init();
+splitbee.init({
+  scriptUrl: "/bee.js",
+  apiUrl: "/_hive",
+});
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
