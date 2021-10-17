@@ -22,6 +22,7 @@ export async function getStaticProps({
       blocks,
       post,
     },
+    revalidate: 60 * 5,
   };
 }
 
@@ -44,7 +45,7 @@ export async function getStaticPaths() {
   const table = await getAllPosts();
   return {
     paths: table.map((row) => `/blog/${row.slug}`),
-    fallback: true,
+    fallback: "blocking",
   };
 }
 
