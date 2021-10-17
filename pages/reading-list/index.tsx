@@ -39,7 +39,7 @@ function BlogList({ items }: { items: ReadingList[] }) {
           <div className="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mx-auto">
             <a href="#">
               <img
-                className="rounded-t-lg"
+                className="rounded-t-lg h-56 w-full"
                 src={
                   item?.Image ||
                   "https://flowbite.com/docs/images/blog/image-1.jpg"
