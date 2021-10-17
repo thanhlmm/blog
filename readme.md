@@ -1,5 +1,5 @@
-# react notion blog
+# 👋 thanhle.blog
 
-This is a simple example blog example using react-notion, notion-api-worker & Next.js.
+I write about the jouney on building high-end product
 
-Go to [https://splitbee.io/blog/notion-as-cms-using-nextjs](https://splitbee.io/blog/notion-as-cms-using-nextjs) for the documentation.
+Go to [https://thanhle.blog](https://thanhle.blog) to read.
