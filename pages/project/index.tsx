@@ -40,8 +40,8 @@ const ProjectPage = ({ projects }: { projects: Project[] }) => {
         <title>💡 Projects</title>
       </Head>
       <div className="px-4 mt-4 mb-2 text-xl text-center md:mt-8 md:mb-4 md:px-8">
-        "I do some pet projects in the free time. It helps me learn new tech and
-        experiment on building.
+        "I do some pet projects in my free time. It helps me learn new tech and
+        experiment on building things.
         <br />
         Stay tuned, the list is getting longer 🤪"
         <div className="mt-4">
