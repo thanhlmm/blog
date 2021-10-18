@@ -55,7 +55,7 @@ const ProjectPage = ({ projects }: { projects: Project[] }) => {
         </div>
       </div>
       <div className="relative pt-16 pb-32 overflow-hidden bg-white">
-        {projects.map((prj, idx) => {
+        {projects.map((prj) => {
           if (true) {
             return (
               <div className="relative mb-20">
