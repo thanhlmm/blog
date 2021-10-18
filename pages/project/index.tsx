@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 
 const NOTION_PROJECTS_ID =
   process.env.NOTION_PROJECTS_ID || "9901f946476843c98b1d47a730297c7f";
@@ -38,11 +39,20 @@ const ProjectPage = ({ projects }: { projects: Project[] }) => {
       <Head>
         <title>💡 Projects</title>
       </Head>
-      <div className="mb-10 text-xl text-center my-14">
-        I do some pet projects in the free time. It helps me learn new tech and
+      <div className="px-4 mt-4 mb-2 text-xl text-center md:mt-8 md:mb-4 md:px-8">
+        "I do some pet projects in the free time. It helps me learn new tech and
         experiment on building.
         <br />
-        Stay tune, the list is getting longer 🤪
+        Stay tune, the list is getting longer 🤪"
+        <div className="mt-4">
+          <Image
+            src="/me.jpeg"
+            alt="me"
+            className="rounded-md"
+            width="60"
+            height="60"
+          />
+        </div>
       </div>
       <div className="relative pt-16 pb-32 overflow-hidden bg-white">
         {projects.map((prj, idx) => {
