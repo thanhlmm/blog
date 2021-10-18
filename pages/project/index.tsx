@@ -43,7 +43,7 @@ const ProjectPage = ({ projects }: { projects: Project[] }) => {
         "I do some pet projects in the free time. It helps me learn new tech and
         experiment on building.
         <br />
-        Stay tune, the list is getting longer 🤪"
+        Stay tuned, the list is getting longer 🤪"
         <div className="mt-4">
           <Image
             src="/me.jpeg"
