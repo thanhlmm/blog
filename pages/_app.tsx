@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { AppProps } from "next/app";
 import splitbee from "@splitbee/web";
 import Header from "../components/header";
@@ -16,6 +17,10 @@ splitbee.init({
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div>
+      <Head>
+        <title>ThanhLe Blog - Homepage</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Header />
       <Component {...pageProps} />
       <Footer />

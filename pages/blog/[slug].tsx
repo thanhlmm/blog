@@ -1,4 +1,5 @@
 import { NotionRenderer, BlockMapType } from "react-notion";
+import Head from "next/head";
 
 import { getAllPosts, Post } from "../";
 
@@ -33,8 +34,11 @@ const BlogPost: React.FC<{ post: Post; blocks: BlockMapType }> = ({
   if (!post) return null;
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
-      <h1 className="font-bold text-2xl text-gray-700 mb-4">{post.title}</h1>
+    <div className="max-w-5xl px-4 mx-auto mt-10 sm:px-6 lg:px-8">
+      <Head>
+        <title>📝 {post.title}</title>
+      </Head>
+      <h1 className="mb-4 text-2xl font-bold text-gray-700">{post.title}</h1>
       <hr />
       <NotionRenderer blockMap={blocks} />
     </div>

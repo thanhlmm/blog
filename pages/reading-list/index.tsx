@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 const NOTION_READING_LIST_ID =
   process.env.NOTION_READING_LIST_ID || "7c547405f812444f85ea8a913a9816db";
 
@@ -34,12 +36,15 @@ export async function getStaticProps() {
 function BlogList({ items }: { items: ReadingList[] }) {
   return (
     <div className="container mx-auto mt-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 justify-around align-top px-2">
+      <Head>
+        <title>📚 Reading list</title>
+      </Head>
+      <div className="grid justify-around grid-cols-1 gap-2 px-2 align-top md:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
-          <div className="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5 mx-auto">
+          <div className="max-w-sm mx-auto mb-5 bg-white border border-gray-200 rounded-lg shadow-md">
             <a href="#">
               <img
-                className="rounded-t-lg h-56 w-full"
+                className="w-full h-56 rounded-t-lg"
                 src={
                   item?.Image ||
                   "https://flowbite.com/docs/images/blog/image-1.jpg"
@@ -49,7 +54,7 @@ function BlogList({ items }: { items: ReadingList[] }) {
             </a>
             <div className="p-5">
               <a href={item.URL} target="_blank">
-                <h5 className="text-gray-900 font-bold text-lg tracking-tight mb-1">
+                <h5 className="mb-1 text-lg font-bold tracking-tight text-gray-900">
                   {item.Title}
                 </h5>
               </a>
@@ -60,11 +65,11 @@ function BlogList({ items }: { items: ReadingList[] }) {
                   </span>
                 ))}
               </div>
-              <p className="font-normal text-sm text-gray-700 mb-3">
+              <p className="mb-3 text-sm font-normal text-gray-700">
                 {item.Summary}
               </p>
               {/* <a
-                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center"
+                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300"
                 href="#"
               >
                 Read more
