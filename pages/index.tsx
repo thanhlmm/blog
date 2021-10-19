@@ -12,6 +12,7 @@ export type Post = {
   date: string;
   tag: string[];
   status: PostStatus;
+  description?: string;
 };
 
 export const getAllPosts = async (): Promise<Post[]> => {
