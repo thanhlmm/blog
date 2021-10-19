@@ -44,7 +44,7 @@ function BlogList({ items }: { items: ReadingList[] }) {
           <div className="w-full mx-auto mb-5 bg-white border border-gray-200 rounded-lg shadow-md">
             <a href={item.URL} target="_blank">
               <img
-                className="w-full h-56 rounded-t-lg"
+                className="w-full h-56 rounded-t-lg object-cover"
                 loading="lazy"
                 src={
                   item?.Image ||
