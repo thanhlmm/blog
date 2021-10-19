@@ -39,7 +39,7 @@ function BlogList({ items }: { items: ReadingList[] }) {
       <Head>
         <title>📚 Reading list</title>
       </Head>
-      <div className="grid justify-around grid-cols-1 gap-2 px-2 align-top md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid justify-around grid-cols-1 gap-2 gap-y-4 px-2 align-top md:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
           <div className="w-full mx-auto mb-5 bg-white border border-gray-200 rounded-lg shadow-md">
             <a href={item.URL} target="_blank">
