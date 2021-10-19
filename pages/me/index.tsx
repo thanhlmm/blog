@@ -27,9 +27,9 @@ const MePage = () => {
         <h1 className="text-2xl text-gray-700 mb-2">What do I value and believe?</h1>
         <div className="pl-2 mx-auto px-3 md:pl-10">
           <ul className="space-y-2">
-            <li><strong>Professional ethics/Naive</strong> - I believe it make me happy on the journey without any regret</li>
+            <li><strong>Professional ethics/Naive</strong> - I believe it makes me happy on the journey without any regret</li>
             <li><strong>Value</strong> - I prefer value it created instead of it flashy</li>
-            <li><strong>Myself</strong> - In the end, only thing you can control is yourself. I believe if I happy, people around gonna happy</li>
+            <li><strong>Myself</strong> - In the end, the only thing you can control is yourself. I believe if I'm happy, people around gonna happy</li>
           </ul>
           </div>
         </div>
@@ -38,18 +38,18 @@ const MePage = () => {
         <h1 className="text-2xl text-gray-700 mb-2">Facts <span className="opacity-40">TODO:// Add a quick form here</span></h1>
         <div className="pl-2 md:pl-10 space-y-4">
           <div>
-            <p className=" underline">Why I try to put lots of emoji?</p>
+            <p className=" underline">Why do I try to put lots of emojis?</p>
             <p className="">It makes make look funny 🤪</p>
           </div>
 
           <div>
             <p className=" underline">My hobbies?</p>
-            <p className="">Running 🏃‍♂️, treking 🧗‍♂️, Dota 2, lost in my thought while driving 🚴‍♂️</p>
+            <p className="">Running 🏃‍♂️, trekking 🧗‍♂️, Dota 2, lost in my thought while driving 🚴‍♂️</p>
           </div>
 
           <div>
             <p className=" underline">My thought on technical?</p>
-            <p className="">It a long story and I'm lazy 😪</p>
+            <p className="">It depends on which angle do you want to hear 😪</p>
           </div>
         </div>
       </div>
