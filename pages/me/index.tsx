@@ -40,7 +40,7 @@ const MePage = () => {
         <div className="pl-2 md:pl-10 space-y-4">
           <div>
             <p className=" underline">Why do I try to put lots of emojis?</p>
-            <p className="">It makes make look funny 🤪</p>
+            <p className="">It makes me look funny 🤪</p>
           </div>
 
           <div>
