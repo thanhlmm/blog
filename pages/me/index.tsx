@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const MePage = () => {
   return (
-    <div className="max-w-5xl mx-auto mt-20 space-y-8">
+    <div className="max-w-5xl mx-auto mt-12 space-y-8 p-2">
         <Head>
         <title>🤷‍♂️ Me</title>
       </Head>
@@ -19,6 +19,7 @@ const MePage = () => {
             width="60"
             height="60"
           />
+          <div className="font-medium text-lg">Thanh Le</div>
         </div>
       </div>
 
@@ -35,7 +36,7 @@ const MePage = () => {
         </div>
 
       <div>
-        <h1 className="text-2xl text-gray-700 mb-2">Facts <span className="opacity-40">TODO:// Add a quick form here</span></h1>
+        <h1 className="text-2xl text-gray-700 mb-2">Facts <span className="opacity-40">TODO: Add a quick form here</span></h1>
         <div className="pl-2 md:pl-10 space-y-4">
           <div>
             <p className=" underline">Why do I try to put lots of emojis?</p>
