@@ -41,7 +41,7 @@ function BlogList({ items }: { items: ReadingList[] }) {
       </Head>
       <div className="grid justify-around grid-cols-1 gap-2 px-2 align-top md:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
-          <div className="max-w-sm mx-auto mb-5 bg-white border border-gray-200 rounded-lg shadow-md">
+          <div className="w-full mx-auto mb-5 bg-white border border-gray-200 rounded-lg shadow-md">
             <a href={item.URL} target="_blank">
               <img
                 className="w-full h-56 rounded-t-lg"
