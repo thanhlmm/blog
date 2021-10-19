@@ -45,6 +45,7 @@ function BlogList({ items }: { items: ReadingList[] }) {
             <a href={item.URL} target="_blank">
               <img
                 className="w-full h-56 rounded-t-lg"
+                loading="lazy"
                 src={
                   item?.Image ||
                   "https://flowbite.com/docs/images/blog/image-1.jpg"
