@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const MePage = () => {
   return (
-    <div className="max-w-5xl mx-auto mt-12 space-y-8 p-2">
+    <div className="max-w-5xl mx-auto mt-4 space-y-8 p-2">
         <Head>
         <title>🤷‍♂️ Me</title>
       </Head>

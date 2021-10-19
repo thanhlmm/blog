@@ -52,6 +52,7 @@ const ProjectPage = ({ projects }: { projects: Project[] }) => {
             width="60"
             height="60"
           />
+          <div className="font-medium text-lg">Thanh Le</div>
         </div>
       </div>
       <div className="relative pt-16 pb-32 overflow-hidden bg-white">
