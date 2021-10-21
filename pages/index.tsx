@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CalendarIcon, ChevronRightIcon } from "@heroicons/react/solid";
+import dayjs from "dayjs";
 
 const NOTION_BLOG_ID =
   process.env.NOTION_BLOG_ID || "c0a9456d6fa04bb2af554a310ac7b5ff";
@@ -20,7 +21,15 @@ export const getAllPosts = async (): Promise<Post[]> => {
     `https://notion-api.splitbee.io/v1/table/${NOTION_BLOG_ID}`
   )
     .then((res) => res.json())
-    .then((res) => res.filter((row: Post) => row.status === "Published"));
+    .then((res) =>
+      res
+        .filter((row: Post) => row.status === "Published")
+        .sort(
+          (a: Post, b: Post) =>
+            dayjs(b.date, "YYYY-MM-DD").unix() -
+            dayjs(a.date, "YYYY-MM-DD").unix()
+        )
+    );
 };
 
 export async function getStaticProps() {
