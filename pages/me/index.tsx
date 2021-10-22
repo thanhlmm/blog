@@ -40,8 +40,8 @@ const MePage = () => {
             </li>
             <li>
               <strong>Myself</strong> - In the end, the only thing you can
-              control is yourself. I believe if I'm happy, people around gonna
-              happy
+              control is yourself. I believe if my life is a happy journey, so
+              does everyone else can
             </li>
           </ul>
         </div>
