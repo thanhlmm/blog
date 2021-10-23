@@ -26,7 +26,7 @@ const MePage = () => {
       {/* MY VALUE METRICS */}
       <div>
         <h1 className="mb-2 text-2xl text-gray-700">
-          What do I value and believe?
+          What I value and believe
         </h1>
         <div className="px-3 pl-2 mx-auto md:pl-10">
           <ul className="space-y-2">
