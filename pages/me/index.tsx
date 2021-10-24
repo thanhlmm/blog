@@ -99,6 +99,15 @@ const MePage = () => {
           >
             Email
           </a>
+
+          <a
+            className="text-indigo-600"
+            href="https://app.cal.com/thanhle"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Google Meet
+          </a>
         </div>
       </div>
     </div>
