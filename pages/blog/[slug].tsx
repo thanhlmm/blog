@@ -16,6 +16,12 @@ export async function getStaticProps({
   // Find the current blogpost by slug
   const post = posts.find((t) => t.slug === slug);
 
+  if (!post) {
+    return {
+      notFound: true,
+    };
+  }
+
   const notion = new NotionAPI();
   const blocks = await notion.getPage(post.id);
 
