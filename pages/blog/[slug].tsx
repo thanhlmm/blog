@@ -55,6 +55,10 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
         .notion-hash-link {
           margin-top: 7px;
         }
+
+        .notion-viewport {
+          position: relative;
+        }
       `}</style>
     </div>
   );
