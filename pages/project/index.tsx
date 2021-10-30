@@ -93,7 +93,6 @@ const ProjectPage = ({ projects }: { projects: Project[] }) => {
                           {prj.url && (
                             <a
                               href={prj.story}
-                              target="_blank"
                               className="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-indigo-700 border border-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                             >
                               Story behind
