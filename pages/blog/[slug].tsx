@@ -48,9 +48,9 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
           }&background_color=%23056eaa&font_style=font-sans&left_meta=%40cuthanh15&right_meta=thanhle.blog`}
         />
       </Head>
-      <h1 className="mb-4 text-2xl font-bold text-gray-700">{post.title}</h1>
-      <hr />
-      <NotionRenderer recordMap={blocks} fullPage={false} darkMode={false} />
+      {/* <h1 className="mb-4 text-2xl font-bold text-gray-700">{post.title}</h1> */}
+      {/* <hr /> */}
+      <NotionRenderer recordMap={blocks} fullPage={true} darkMode={false} />
       <style global jsx>{`
         .notion-hash-link {
           margin-top: 7px;
