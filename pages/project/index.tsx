@@ -13,6 +13,7 @@ interface Project {
   }[];
   url?: string;
   github?: string;
+  story: string;
 }
 
 export const getAllProjects = async (): Promise<Project[]> => {
@@ -52,7 +53,7 @@ const ProjectPage = ({ projects }: { projects: Project[] }) => {
             width="60"
             height="60"
           />
-          <div className="font-medium text-lg">Thanh Le</div>
+          <div className="text-lg font-medium">Thanh Le</div>
         </div>
       </div>
       <div className="relative pt-16 pb-32 overflow-hidden bg-white">
@@ -86,6 +87,16 @@ const ProjectPage = ({ projects }: { projects: Project[] }) => {
                               className="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-indigo-700 bg-indigo-100 border border-transparent rounded-md hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                             >
                               Take a look
+                            </a>
+                          )}
+
+                          {prj.url && (
+                            <a
+                              href={prj.story}
+                              target="_blank"
+                              className="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-indigo-700 border border-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            >
+                              Story behind
                             </a>
                           )}
 
