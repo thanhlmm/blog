@@ -63,7 +63,7 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.1", "@babel/runtime@^7.11.1", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.2.0":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.1", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.1", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.2.0":
   version "7.16.0"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.16.0.tgz#e27b977f2e2088ba24748bf99b5e1dece64e4f0b"
   integrity sha512-Nht8L0O8YCktmsDV6FqFue7vQLRx3Hb0B37lS5y0jDRqRxlBG4wIJHnf9/bgSE2UyipKFA01YtS+npRdTWBUyw==
@@ -1188,7 +1188,7 @@ evp_bytestokey@^1.0.0, evp_bytestokey@^1.0.3:
     md5.js "^1.3.4"
     safe-buffer "^5.1.1"
 
-exenv@^1.2.0:
+exenv@^1.2.0, exenv@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
   integrity sha1-KueOhdmJQVhnCwPUe+wfA72Ru50=
@@ -2777,6 +2777,14 @@ react-hotkeys-hook@^3.0.3:
   integrity sha512-vaORq07rWgmuF3owWRhgFV/3VL8/l2q9lz0WyVEddJnWTtKW+AOgU5YgYKuwN6h6h7bCcLG3MFsJIjCrM/5DvQ==
   dependencies:
     hotkeys-js "3.8.7"
+
+react-hydration-on-demand@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-hydration-on-demand/-/react-hydration-on-demand-2.0.1.tgz#76bcc8d6d832c070341513bcfaba54c01fbc7980"
+  integrity sha512-25ZyBooNH1jF0iv9FfGx8R59BwylxbCZp7suMmYbRpnHb1TTFXvCodb1qYa/r1kcMNHnDG58yQN/HEjz3J6RSg==
+  dependencies:
+    "@babel/runtime" "^7.10.2"
+    exenv "^1.2.2"
 
 react-image@^4.0.3:
   version "4.0.3"

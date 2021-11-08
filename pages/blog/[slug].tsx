@@ -4,6 +4,7 @@ import { NotionRenderer } from "react-notion-x";
 import { getAllPosts, Post } from "../";
 import "react-notion-x/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
+import CommentComponent from "../../components/comment";
 
 export async function getStaticProps({
   params: { slug },
@@ -51,6 +52,11 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
       {/* <h1 className="mb-4 text-2xl font-bold text-gray-700">{post.title}</h1> */}
       {/* <hr /> */}
       <NotionRenderer recordMap={blocks} fullPage={true} darkMode={false} />
+
+      <div>
+        <CommentComponent />
+      </div>
+
       <style global jsx>{`
         .notion-hash-link {
           margin-top: 7px;
