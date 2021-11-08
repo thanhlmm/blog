@@ -48,9 +48,7 @@ const MePage = () => {
       </div>
 
       <div>
-        <h1 className="mb-2 text-2xl text-gray-700">
-          Facts
-        </h1>
+        <h1 className="mb-2 text-2xl text-gray-700">Facts</h1>
         <div className="pl-2 space-y-4 md:pl-10">
           <div>
             <p className="underline ">Why do I try to put lots of emojis?</p>
@@ -109,6 +107,18 @@ const MePage = () => {
             Google Meet
           </a>
         </div>
+      </div>
+
+      <div>
+        <iframe
+          allowransparency="true"
+          allowfullscreen="true"
+          allow="geolocation; microphone; camera"
+          src="https://my.forms.app/form/6188ce488c8fa556a16e2129"
+          frameborder="0"
+          className="w-full max-w-full border-none"
+          style={{ height: 800 }}
+        ></iframe>
       </div>
     </div>
   );
