@@ -30,7 +30,7 @@ export async function getStaticProps({
       blocks,
       post,
     },
-    revalidate: 60 * 5,
+    revalidate: 60 * 1,
   };
 }
 
