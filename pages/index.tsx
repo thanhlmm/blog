@@ -16,14 +16,14 @@ export type Post = {
   description?: string;
 };
 
-export const getAllPosts = async (): Promise<Post[]> => {
+export const getAllPosts = async({ includeDraft } = { includeDraft: false }): Promise<Post[]> => {
   return await fetch(
     `https://notion-api.splitbee.io/v1/table/${NOTION_BLOG_ID}`
   )
     .then((res) => res.json())
     .then((res) =>
       res
-        .filter((row: Post) => row.status === "Published")
+        .filter((row: Post) => includeDraft ? true : row.status === "Published")
         .sort(
           (a: Post, b: Post) =>
             dayjs(b.date, "YYYY-MM-DD").unix() -

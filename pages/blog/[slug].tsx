@@ -11,7 +11,7 @@ export async function getStaticProps({
   params: { slug: string };
 }) {
   // Get all posts again
-  const posts = await getAllPosts();
+  const posts = await getAllPosts({ includeDraft: true });
 
   // Find the current blogpost by slug
   const post = posts.find((t) => t.slug === slug);
