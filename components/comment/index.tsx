@@ -2,10 +2,14 @@ import withHydrationOnDemand from "react-hydration-on-demand";
 
 const Comment = () => {
   return (
-    <div
-      className="h-40"
-      dangerouslySetInnerHTML={{
-        __html: `
+    <div>
+      <p className="text-center">
+        <span>🗣</span> You need to sign in to view others comments
+      </p>
+      <div
+        className="h-40"
+        dangerouslySetInnerHTML={{
+          __html: `
         <script
           src="https://utteranc.es/client.js"
           repo="thanhlmm/blog"
@@ -16,8 +20,9 @@ const Comment = () => {
           async
         ></script>
       `,
-      }}
-    ></div>
+        }}
+      ></div>
+    </div>
   );
 };
 
