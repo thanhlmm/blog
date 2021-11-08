@@ -49,7 +49,7 @@ const MePage = () => {
 
       <div>
         <h1 className="mb-2 text-2xl text-gray-700">
-          Facts <span className="opacity-40">TODO: Add a quick form here</span>
+          Facts
         </h1>
         <div className="pl-2 space-y-4 md:pl-10">
           <div>
