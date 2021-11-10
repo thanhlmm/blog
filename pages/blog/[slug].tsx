@@ -51,7 +51,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
       </Head>
       {/* <h1 className="mb-4 text-2xl font-bold text-gray-700">{post.title}</h1> */}
       {/* <hr /> */}
-      <NotionRenderer recordMap={blocks} fullPage={true} darkMode={false} />
+      <NotionRenderer recordMap={blocks} fullPage={true} darkMode={false} showTableOfContents minTableOfContentsItems={3} />
 
       <div>
         <CommentComponent />
