@@ -111,11 +111,11 @@ const MePage = () => {
 
       <div>
         <iframe
-          allowransparency="true"
-          allowfullscreen="true"
+          allowTransparency
+          allowFullScreen
           allow="geolocation; microphone; camera"
           src="https://my.forms.app/form/6188ce488c8fa556a16e2129"
-          frameborder="0"
+          frameBorder="0"
           className="w-full max-w-full border-none"
           style={{ height: 800 }}
         ></iframe>
