@@ -18,7 +18,7 @@ export async function getStaticProps() {
 
 function BlogList({ posts }: { posts: Post[] }) {
   return (
-    <div className="container mx-auto mt-10">
+    <div className="max-w-5xl px-4 mx-auto mt-10 sm:px-6 lg:px-8">
       <Head>
         <title>📝 Blog</title>
       </Head>
