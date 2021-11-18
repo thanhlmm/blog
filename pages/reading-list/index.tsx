@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import _debounce from "lodash-es/debounce";
 
 const NOTION_READING_LIST_ID =
