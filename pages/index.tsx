@@ -50,6 +50,15 @@ export async function getStaticProps() {
 function HomePage({ posts }: { posts: Post[] }) {
   return (
     <div className="max-w-5xl px-4 mx-auto mt-10 sm:px-6 lg:px-8">
+      <iframe
+        src="https://thanhleblg.substack.com/embed"
+        width="100%"
+        height="250"
+        className="mb-8"
+        frameBorder="0"
+        scrolling="no"
+      ></iframe>
+
       <div className="overflow-hidden bg-white shadow sm:rounded-md">
         <ul role="list" className="divide-y divide-gray-200">
           {posts.map((post) => (
