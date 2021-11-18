@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useMemo, useState } from "react";
+import _debounce from "lodash-es/debounce";
 
 const NOTION_READING_LIST_ID =
   process.env.NOTION_READING_LIST_ID || "7c547405f812444f85ea8a913a9816db";
@@ -36,32 +37,40 @@ export async function getStaticProps() {
 
 function BlogList({ items }: { items: ReadingList[] }) {
   const [keyword, setKeyword] = useState("");
+  const [itemFiltered, setResult] = useState<ReadingList[]>(items);
 
-  const itemFiltered = useMemo(() => {
-    return items.filter((item) => {
-      if (!keyword) {
-        return true;
-      }
+  const getFilterResult = _debounce((keyword: string) => {
+    setResult(
+      items.filter((item) => {
+        if (!keyword) {
+          return true;
+        }
 
-      const keywordLowerCase = keyword.toLowerCase();
+        const keywordLowerCase = keyword.toLowerCase();
 
-      if (item.Title.toLowerCase().includes(keywordLowerCase)) {
-        return true;
-      }
+        if (item.Title.toLowerCase().includes(keywordLowerCase)) {
+          return true;
+        }
 
-      if (item.Summary.toLowerCase().includes(keywordLowerCase)) {
-        return true;
-      }
+        if (item.Summary.toLowerCase().includes(keywordLowerCase)) {
+          return true;
+        }
 
-      if (
-        item.Tags?.map((tag) => tag.toLowerCase()).includes(keywordLowerCase)
-      ) {
-        return true;
-      }
+        if (
+          item.Tags?.map((tag) => tag.toLowerCase()).includes(keywordLowerCase)
+        ) {
+          return true;
+        }
 
-      return false;
-    });
-  }, [items, keyword]);
+        return false;
+      })
+    );
+  }, 300);
+
+  const handleChangeKeyword = (keyword: string) => {
+    setKeyword(keyword);
+    getFilterResult(keyword);
+  };
 
   return (
     <div className="container mx-auto mt-10">
@@ -76,7 +85,7 @@ function BlogList({ items }: { items: ReadingList[] }) {
             name="search"
             id="search"
             value={keyword}
-            onChange={(e) => setKeyword(e.target.value)}
+            onChange={(e) => handleChangeKeyword(e.target.value)}
             placeholder="Quick search"
             className="block w-full p-3 pr-12 text-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           />

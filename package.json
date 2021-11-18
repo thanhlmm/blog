@@ -12,6 +12,7 @@
     "@splitbee/web": "^0.3.0",
     "@tailwindcss/forms": "^0.3.4",
     "dayjs": "^1.10.7",
+    "lodash-es": "^4.17.21",
     "next": "^11.1.2",
     "notion-client": "^4.10.0",
     "react": "^16.12.0",
@@ -21,6 +22,7 @@
     "react-notion-x": "^4.11.0"
   },
   "devDependencies": {
+    "@types/lodash-es": "^4.17.5",
     "@types/node": "^12.12.21",
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
