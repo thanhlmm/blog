@@ -46,7 +46,7 @@ function BlogList({ posts }: { posts: Post[] }) {
                         </div>
                         <div className="mt-1 space-x-1">
                           {post.tag.map((tag) => (
-                            <span className="rounded text-sm text-white bg-blue-600 px-2 py-0.5">
+                            <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-yellow-100 text-yellow-800">
                               {tag}
                             </span>
                           ))}

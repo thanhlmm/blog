@@ -39,12 +39,12 @@ function BlogList({ items }: { items: ReadingList[] }) {
       <Head>
         <title>📚 Reading list</title>
       </Head>
-      <div className="grid justify-around grid-cols-1 gap-4 gap-x-8 px-2 align-top md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid justify-around grid-cols-1 gap-4 px-2 align-top gap-x-8 md:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
           <div className="w-full mx-auto mb-5 bg-white border border-gray-200 rounded-lg shadow-md">
             <a href={item.URL} target="_blank">
               <img
-                className="w-full h-56 rounded-t-lg object-cover"
+                className="object-cover w-full h-56 rounded-t-lg"
                 loading="lazy"
                 src={
                   item?.Image ||
@@ -61,7 +61,7 @@ function BlogList({ items }: { items: ReadingList[] }) {
               </a>
               <div className="mb-1 space-x-1">
                 {(item?.Tags || []).map((tag) => (
-                  <span className="rounded text-sm text-white bg-blue-600 px-2 py-0.5">
+                  <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
                     {tag}
                   </span>
                 ))}
