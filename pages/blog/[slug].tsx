@@ -60,6 +60,17 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
       />
 
       <div>
+        <iframe
+          src="https://thanhleblg.substack.com/embed"
+          width="100%"
+          height="120"
+          className="mt-3 mb-3"
+          frameBorder="0"
+          scrolling="no"
+        ></iframe>
+      </div>
+
+      <div>
         <CommentComponent />
       </div>
 
