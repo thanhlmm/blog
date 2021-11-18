@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useMemo, useState } from "react";
 
 const NOTION_READING_LIST_ID =
   process.env.NOTION_READING_LIST_ID || "7c547405f812444f85ea8a913a9816db";
@@ -34,13 +35,61 @@ export async function getStaticProps() {
 }
 
 function BlogList({ items }: { items: ReadingList[] }) {
+  const [keyword, setKeyword] = useState("");
+
+  const itemFiltered = useMemo(() => {
+    return items.filter((item) => {
+      if (!keyword) {
+        return true;
+      }
+
+      const keywordLowerCase = keyword.toLowerCase();
+
+      if (item.Title.toLowerCase().includes(keywordLowerCase)) {
+        return true;
+      }
+
+      if (item.Summary.toLowerCase().includes(keywordLowerCase)) {
+        return true;
+      }
+
+      if (
+        item.Tags?.map((tag) => tag.toLowerCase()).includes(keywordLowerCase)
+      ) {
+        return true;
+      }
+
+      return false;
+    });
+  }, [items, keyword]);
+
   return (
     <div className="container mx-auto mt-10">
       <Head>
         <title>📚 Reading list</title>
       </Head>
+
+      <div className="mx-auto my-6 w-96">
+        <div className="relative flex items-center mt-1">
+          <input
+            type="text"
+            name="search"
+            id="search"
+            value={keyword}
+            onChange={(e) => setKeyword(e.target.value)}
+            placeholder="Quick search"
+            className="block w-full p-3 pr-12 text-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          />
+          <div className="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">
+            <kbd className="inline-flex items-center px-2 font-sans text-sm font-medium text-gray-400 border border-gray-200 rounded">
+              ⌘K
+            </kbd>
+          </div>
+        </div>
+      </div>
+
       <div className="grid justify-around grid-cols-1 gap-4 px-2 align-top gap-x-8 md:grid-cols-2 lg:grid-cols-3">
-        {items.map((item) => (
+        {itemFiltered.map((item) => (
           <div className="w-full mx-auto mb-5 bg-white border border-gray-200 rounded-lg shadow-md">
             <a href={item.URL} target="_blank">
               <img
