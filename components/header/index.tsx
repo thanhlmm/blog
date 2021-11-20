@@ -5,10 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const user = {
-  name: "Tom Cook",
-  email: "tom@example.com",
-  imageUrl:
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+  name: "Thanh Le",
+  email: "mihthanh27@gmail.com",
+  imageUrl: "/me.jpeg",
 };
 const navigation = [
   { name: "📝 Blog", href: "/blog" },
@@ -33,10 +32,10 @@ export default function Header() {
     <Disclosure as="nav" className="bg-white border-b border-gray-200">
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="flex justify-between h-12">
               <div className="flex">
-                <div className="flex-shrink-0 flex items-center">
+                <div className="flex items-center flex-shrink-0">
                   <Link href="/">
                     <a>ThanhLe's blog</a>
                   </Link>
@@ -60,10 +59,10 @@ export default function Header() {
                 </div>
               </div>
               <div className="hidden sm:ml-6 sm:flex sm:items-center">
-                <div className="ml-3 relative">
+                <div className="relative ml-3">
                   <div>
                     <Link href="/me">
-                      <a className="max-w-xs bg-white flex items-center text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      <a className="flex items-center max-w-xs text-sm bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         <span className="sr-only">Open user menu</span>
                         <Image
                           src="/me.jpeg"
@@ -77,14 +76,14 @@ export default function Header() {
                   </div>
                 </div>
               </div>
-              <div className="-mr-2 flex items-center sm:hidden">
+              <div className="flex items-center -mr-2 sm:hidden">
                 {/* Mobile menu button */}
-                <Disclosure.Button className="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
-                    <XIcon className="block h-6 w-6" aria-hidden="true" />
+                    <XIcon className="block w-6 h-6" aria-hidden="true" />
                   ) : (
-                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                    <MenuIcon className="block w-6 h-6" aria-hidden="true" />
                   )}
                 </Disclosure.Button>
               </div>
