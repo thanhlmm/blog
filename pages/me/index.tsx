@@ -111,6 +111,13 @@ const MePage = () => {
 
       <div>
         <iframe
+          src="https://tally.so/embed/wgWJOw?hideTitle=1&alignLeft=1&transparentBackground=1"
+          className="w-full max-w-full border-none"
+          height="500"
+          frameBorder="0"
+          title="ThanhLe.blog feedbacks"
+        ></iframe>
+        {/* <iframe
           allowTransparency
           allowFullScreen
           allow="geolocation; microphone; camera"
@@ -118,7 +125,7 @@ const MePage = () => {
           frameBorder="0"
           className="w-full max-w-full border-none"
           style={{ height: 800 }}
-        ></iframe>
+        ></iframe> */}
       </div>
     </div>
   );
