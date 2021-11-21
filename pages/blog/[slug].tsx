@@ -1,6 +1,13 @@
 import Head from "next/head";
 import { NotionAPI } from "notion-client";
-import { NotionRenderer } from "react-notion-x";
+import {
+  NotionRenderer,
+  Code,
+  // Collection,
+  // CollectionRow,
+  Modal,
+} from "react-notion-x";
+import { Tweet, TwitterContextProvider } from "react-static-tweets";
 import { getAllPosts, Post } from "../";
 import "react-notion-x/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
@@ -39,51 +46,70 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
   if (!post) return null;
 
   return (
-    <div className="max-w-5xl px-4 mx-auto mt-10 sm:px-6 lg:px-8">
-      <Head>
-        <title>📝 {post.title}</title>
-        <meta
-          property="og:image"
-          content={`https://ogsupa.com/api/v1?title=${post.title}description=${
-            post.description || ""
-          }&background_color=%23056eaa&font_style=font-sans&left_meta=%40cuthanh15&right_meta=thanhle.blog`}
+    <TwitterContextProvider
+      value={{
+        tweetAstMap: (blocks as any).tweetAstMap || {},
+        swrOptions: {
+          fetcher: (id: string) =>
+            fetch(`/api/get-tweet-ast/${id}`).then((r) => r.json()),
+        },
+      }}
+    >
+      <div className="max-w-5xl px-4 mx-auto mt-10 sm:px-6 lg:px-8">
+        <Head>
+          <title>📝 {post.title}</title>
+          <meta
+            property="og:image"
+            content={`https://ogsupa.com/api/v1?title=${
+              post.title
+            }description=${
+              post.description || ""
+            }&background_color=%23056eaa&font_style=font-sans&left_meta=%40cuthanh15&right_meta=thanhle.blog`}
+          />
+        </Head>
+        {/* <h1 className="mb-4 text-2xl font-bold text-gray-700">{post.title}</h1> */}
+        {/* <hr /> */}
+        <NotionRenderer
+          components={{
+            code: Code,
+            // collection: Collection,
+            // collectionRow: CollectionRow,
+            tweet: Tweet,
+            modal: Modal,
+          }}
+          recordMap={blocks}
+          fullPage={true}
+          darkMode={false}
+          showTableOfContents
+          minTableOfContentsItems={3}
         />
-      </Head>
-      {/* <h1 className="mb-4 text-2xl font-bold text-gray-700">{post.title}</h1> */}
-      {/* <hr /> */}
-      <NotionRenderer
-        recordMap={blocks}
-        fullPage={true}
-        darkMode={false}
-        showTableOfContents
-        minTableOfContentsItems={3}
-      />
 
-      <div>
-        <iframe
-          src="https://thanhleblg.substack.com/embed"
-          width="100%"
-          height="120"
-          className="mt-3 mb-3"
-          frameBorder="0"
-          scrolling="no"
-        ></iframe>
+        <div>
+          <iframe
+            src="https://thanhleblg.substack.com/embed"
+            width="100%"
+            height="120"
+            className="mt-3 mb-3"
+            frameBorder="0"
+            scrolling="no"
+          ></iframe>
+        </div>
+
+        <div>
+          <CommentComponent />
+        </div>
+
+        <style global jsx>{`
+          .notion-hash-link {
+            margin-top: 7px;
+          }
+
+          .notion-viewport {
+            position: relative;
+          }
+        `}</style>
       </div>
-
-      <div>
-        <CommentComponent />
-      </div>
-
-      <style global jsx>{`
-        .notion-hash-link {
-          margin-top: 7px;
-        }
-
-        .notion-viewport {
-          position: relative;
-        }
-      `}</style>
-    </div>
+    </TwitterContextProvider>
   );
 };
 
