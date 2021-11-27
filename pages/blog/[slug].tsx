@@ -65,7 +65,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
               post.title
             }description=${
               post.description || ""
-            }&background_color=%23056eaa&font_style=font-sans&left_meta=%40cuthanh15&right_meta=thanhle.blog`}
+            }&&&&background_color=%23056eaa&font_style=font-sans&left_meta=%40cuthanh15&right_meta=thanhle.blog`}
           />
         </Head>
         {/* <h1 className="mb-4 text-2xl font-bold text-gray-700">{post.title}</h1> */}
