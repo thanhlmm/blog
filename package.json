@@ -13,7 +13,7 @@
     "@tailwindcss/forms": "^0.3.4",
     "dayjs": "^1.10.7",
     "lodash-es": "^4.17.21",
-    "next": "^11.1.2",
+    "next": "12",
     "notion-client": "^4.10.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
