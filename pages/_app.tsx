@@ -20,6 +20,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>ThanhLe Blog - Homepage</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="icon" type="image/x-icon" href="/assets/favicon.png"></link>
       </Head>
       <Header />
       <Component {...pageProps} />
