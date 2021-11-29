@@ -108,6 +108,10 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
           .notion-viewport {
             position: relative;
           }
+
+          .notion-aside-table-of-contents {
+            max-width: 250px;
+          }
         `}</style>
       </div>
     </TwitterContextProvider>
