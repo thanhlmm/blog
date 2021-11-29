@@ -39,9 +39,9 @@ const MePage = () => {
               flashy
             </li>
             <li>
-              <strong>Myself</strong> - In the end, the only thing you can
-              control is yourself. I believe if my life is a happy journey, so
-              does everyone else can
+              <strong>Freedom</strong> - I think all the way road to free dom.
+              So I want to have freedom and everyone around me can feel its
+              value
             </li>
           </ul>
         </div>
