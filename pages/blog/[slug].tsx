@@ -112,6 +112,11 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
           .notion-aside-table-of-contents {
             max-width: 250px;
           }
+
+          .notion-table-of-contents-item {
+            white-space: wrap;
+            line-height: 1.25rem;
+          }
         `}</style>
       </div>
     </TwitterContextProvider>
