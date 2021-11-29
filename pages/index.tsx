@@ -14,6 +14,9 @@ export type Post = {
   tag: string[];
   status: PostStatus;
   description?: string;
+  hero_image: {
+    url: string;
+  }[];
 };
 
 export const getAllPosts = async (

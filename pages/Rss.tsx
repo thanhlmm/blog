@@ -17,6 +17,10 @@ const blogPostsRssXml = (blogPosts: Post[]) => {
         <description>
         <![CDATA[${post.description}]]>
         </description>
+        <media:content 
+          xmlns:media="https://thanhle.blog/blog/${post.slug}" 
+          url="${post?.hero_image?.[0]?.url || ""}" 
+          medium="image" />
     </item>`;
   });
   return {
