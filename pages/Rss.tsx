@@ -1,9 +1,10 @@
 import React from "react";
 import { NextPageContext } from "next";
 import { getAllPosts, Post } from ".";
+import dayjs from 'dayjs';
 
 const blogPostsRssXml = (blogPosts: Post[]) => {
-  let latestPostDate: string = "";
+  const latestPostDate = new Date();
   let rssItemsXml = "";
   blogPosts.forEach((post) => {
     rssItemsXml += `
@@ -13,14 +14,10 @@ const blogPostsRssXml = (blogPosts: Post[]) => {
           https://thanhle.blog/blog/${post.slug}
         </link>
         
-        <pubDate>${post.date}</pubDate>
+        <pubDate>${dayjs(post.date, "YYYY-MM-DD").toDate()}</pubDate>
         <description>
         <![CDATA[${post.description}]]>
         </description>
-        <media:content 
-          xmlns:media="https://thanhle.blog/blog/${post.slug}" 
-          url="${post?.hero_image?.[0]?.url || ""}" 
-          medium="image" />
     </item>`;
   });
   return {
