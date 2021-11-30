@@ -39,9 +39,8 @@ const MePage = () => {
               flashy
             </li>
             <li>
-              <strong>Freedom</strong> - I think all the way road to free dom.
-              So I want to have freedom and everyone around me can feel its
-              value
+              <strong>Freedom</strong> - I think all the way road to freedom. So
+              I want to have freedom and everyone around me can feel its value
             </li>
           </ul>
         </div>
