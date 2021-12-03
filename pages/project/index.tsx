@@ -147,11 +147,16 @@ const ProjectPage = ({ projects }: { projects: Project[] }) => {
                   </div>
                   <div className="mt-12 sm:mt-16 lg:mt-0">
                     <div className="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+                      <a
+                        href={prj.url}
+                        target="_blank"
+                      >
                       <img
                         className="w-full shadow-xl rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
                         src={prj.image?.[0].url}
-                        alt="Inbox user interface"
+                        alt={prj.description}
                       />
+                      </a>
                     </div>
                   </div>
                 </div>
