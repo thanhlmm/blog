@@ -11,6 +11,7 @@ interface Project {
     name: string;
     url: string;
   }[];
+  stacks: string[];
   url?: string;
   github?: string;
   story: string;
@@ -79,6 +80,13 @@ const ProjectPage = ({ projects }: { projects: Project[] }) => {
                         <p className="mt-4 text-lg text-gray-500">
                           {prj.description}
                         </p>
+                        <div className="mt-1 space-x-1">
+                          {prj.stacks.map((stack) => (
+                            <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-yellow-100 text-yellow-800">
+                              {stack}
+                            </span>
+                          ))}
+                        </div>
                         <div className="mt-6 space-x-4">
                           {prj.url && (
                             <a
