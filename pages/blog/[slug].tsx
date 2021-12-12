@@ -13,7 +13,7 @@ import "react-notion-x/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
 import "react-static-tweets/styles.css";
 // import CommentComponent from "../../components/comment";
-import CommentV2 from '../../components/comment-v2';
+import CommentV2 from "../../components/comment-v2";
 
 export async function getStaticProps({
   params: { slug },
@@ -64,7 +64,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
             property="og:image"
             content={`https://ogsupa.com/api/v1?title=${
               post.title
-            }description=${
+            }&description=${
               post.description || ""
             }&&&&background_color=%23056eaa&font_style=font-sans&left_meta=%40cuthanh15&right_meta=thanhle.blog`}
           />
