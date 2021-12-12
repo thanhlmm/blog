@@ -10,7 +10,7 @@ import {
 import { Tweet, TwitterContextProvider } from "react-static-tweets";
 import { getAllPosts, Post } from "../";
 import "react-notion-x/src/styles.css";
-import "prismjs/themes/prism-tomorrow.css";
+import "prismjs/themes/prism-okaidia.css";
 import "react-static-tweets/styles.css";
 // import CommentComponent from "../../components/comment";
 import CommentV2 from "../../components/comment-v2";
@@ -124,6 +124,11 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
           .notion-table-of-contents-item {
             white-space: wrap;
             line-height: 1.25rem;
+          }
+
+          .notion-code {
+            font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo,
+              monospace !important;
           }
         `}</style>
       </div>
