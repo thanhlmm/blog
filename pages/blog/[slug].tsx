@@ -130,6 +130,10 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
             font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo,
               monospace !important;
           }
+          
+          .notion-asset-caption {
+            text-align: center;
+          }
         `}</style>
       </div>
     </TwitterContextProvider>
