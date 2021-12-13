@@ -47,6 +47,12 @@ export async function getStaticProps({
 const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
   if (!post) return null;
 
+  const ogImage = post.hero_image?.[0].url || `https://ogsupa.com/api/v1?title=${
+    post.title
+  }&description=${
+    post.description || ""
+  }&&&&background_color=%23056eaa&font_style=font-sans&left_meta=%40cuthanh15&right_meta=thanhle.blog`
+
   return (
     <TwitterContextProvider
       value={{
@@ -62,11 +68,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
           <title>📝 {post.title}</title>
           <meta
             property="og:image"
-            content={`https://ogsupa.com/api/v1?title=${
-              post.title
-            }&description=${
-              post.description || ""
-            }&&&&background_color=%23056eaa&font_style=font-sans&left_meta=%40cuthanh15&right_meta=thanhle.blog`}
+            content={ogImage}
           />
         </Head>
         {/* <h1 className="mb-4 text-2xl font-bold text-gray-700">{post.title}</h1> */}
