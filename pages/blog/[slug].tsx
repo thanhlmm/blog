@@ -10,7 +10,7 @@ import {
 import { Tweet, TwitterContextProvider } from "react-static-tweets";
 import { getAllPosts, Post } from "../";
 import "react-notion-x/src/styles.css";
-import "prismjs/themes/prism-okaidia.css";
+import "prismjs/themes/prism-tomorrow.css";
 import "react-static-tweets/styles.css";
 // import CommentComponent from "../../components/comment";
 import CommentV2 from "../../components/comment-v2";
