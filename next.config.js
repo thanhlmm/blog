@@ -1,3 +1,5 @@
+const { i18n } = require('./next-i18next.config');
+
 module.exports = {
   async rewrites() {
     return [
@@ -11,6 +13,7 @@ module.exports = {
       },
     ];
   },
+  i18n,
   images: {
     domains: ['pbs.twimg.com']
   },

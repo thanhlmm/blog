@@ -1,12 +1,13 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { CalendarIcon, ChevronRightIcon } from "@heroicons/react/solid";
 
 import { getAllPosts, Post } from "../";
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   // Get all posts again
-  const posts = await getAllPosts();
+  const posts = await getAllPosts({ locale });
 
   return {
     props: {
@@ -14,7 +15,7 @@ export async function getStaticProps() {
     },
     revalidate: 60 * 5,
   };
-}
+};
 
 function BlogList({ posts }: { posts: Post[] }) {
   return (

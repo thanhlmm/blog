@@ -27,6 +27,12 @@ function classNames(...classes: string[]) {
 
 export default function Header() {
   const router = useRouter();
+  const { pathname, asPath, query, locale } = router;
+
+  const handleChangeLang = (e: any, locale: string) => {
+    e.preventDefault();
+    router.push({ pathname, query }, asPath, { locale });
+  };
 
   return (
     <Disclosure as="nav" className="bg-white border-b border-gray-200">
@@ -59,6 +65,30 @@ export default function Header() {
                 </div>
               </div>
               <div className="hidden sm:ml-6 sm:flex sm:items-center">
+                <div className="relative ml-3">
+                  <div className="space-x-3">
+                    <a
+                      onClick={(e) => handleChangeLang(e, "en")}
+                      href="/"
+                      className={classNames(
+                        "text-sm hover:border-gray-300 hover:text-gray-700",
+                        locale === "en" ? "text-gray-700" : "text-gray-500"
+                      )}
+                    >
+                      English
+                    </a>
+                    <a
+                      onClick={(e) => handleChangeLang(e, "vi")}
+                      href="/vi"
+                      className={classNames(
+                        "text-sm hover:border-gray-300 hover:text-gray-700",
+                        locale === "vi" ? "text-gray-700" : "text-gray-500"
+                      )}
+                    >
+                      Tiếng Việt
+                    </a>
+                  </div>
+                </div>
                 <div className="relative ml-3">
                   <div>
                     <Link href="/me">
@@ -109,6 +139,30 @@ export default function Header() {
                   </a>
                 </Link>
               ))}
+            </div>
+            <div className="pt-4 pb-3 border-t border-gray-200">
+              <div className="px-4 space-x-3">
+                <a
+                  onClick={(e) => handleChangeLang(e, "en")}
+                  href="/"
+                  className={classNames(
+                    "hover:border-gray-300 hover:text-gray-700",
+                    locale === "en" ? "text-gray-700" : "text-gray-500"
+                  )}
+                >
+                  English
+                </a>
+                <a
+                  onClick={(e) => handleChangeLang(e, "vi")}
+                  href="/vi"
+                  className={classNames(
+                    "hover:border-gray-300 hover:text-gray-700",
+                    locale === "vi" ? "text-gray-700" : "text-gray-500"
+                  )}
+                >
+                  Tiếng Việt
+                </a>
+              </div>
             </div>
             <div className="pt-4 pb-3 border-t border-gray-200">
               <div className="flex items-center px-4">

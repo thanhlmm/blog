@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CalendarIcon, ChevronRightIcon } from "@heroicons/react/solid";
 import dayjs from "dayjs";
+import { GetStaticProps } from "next";
 
 const NOTION_BLOG_ID =
   process.env.NOTION_BLOG_ID || "c0a9456d6fa04bb2af554a310ac7b5ff";
@@ -13,17 +14,20 @@ export type Post = {
   date: string;
   tag: string[];
   status: PostStatus;
+  lang: "en" | "vi";
   description?: string;
+  linkRelatived?: string;
   hero_image: {
     url: string;
   }[];
 };
 
-export const getAllPosts = async (
-  { includeDraft } = { includeDraft: false }
-): Promise<Post[]> => {
+export const getAllPosts = async ({
+  locale = "",
+  includeDraft = false,
+}): Promise<Post[]> => {
   return await fetch(
-    `https://notion-api.splitbee.io/v1/table/${NOTION_BLOG_ID}`
+    `https://notion.refiapp.workers.dev/v1/table/${NOTION_BLOG_ID}`
   )
     .then((res) => res.json())
     .then((res) =>
@@ -31,6 +35,7 @@ export const getAllPosts = async (
         .filter((row: Post) =>
           includeDraft ? true : row.status === "Published"
         )
+        .filter((row: Post) => (locale ? row.lang === locale : true))
         .sort(
           (a: Post, b: Post) =>
             dayjs(b.date, "YYYY-MM-DD").unix() -
@@ -39,8 +44,8 @@ export const getAllPosts = async (
     );
 };
 
-export async function getStaticProps() {
-  const posts = await getAllPosts();
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const posts = await getAllPosts({ locale });
 
   return {
     props: {
@@ -48,7 +53,7 @@ export async function getStaticProps() {
     },
     revalidate: 60 * 5,
   };
-}
+};
 
 function HomePage({ posts }: { posts: Post[] }) {
   return (

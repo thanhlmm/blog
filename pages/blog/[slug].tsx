@@ -14,17 +14,15 @@ import "prismjs/themes/prism-tomorrow.css";
 import "react-static-tweets/styles.css";
 // import CommentComponent from "../../components/comment";
 import CommentV2 from "../../components/comment-v2";
+import Link from "next/link";
+import { GetStaticProps } from "next";
 
-export async function getStaticProps({
-  params: { slug },
-}: {
-  params: { slug: string };
-}) {
+export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
   // Get all posts again
-  const posts = await getAllPosts({ includeDraft: true });
+  const posts = await getAllPosts({ locale: "", includeDraft: true });
 
   // Find the current blogpost by slug
-  const post = posts.find((t) => t.slug === slug);
+  const post = posts.find((t) => t.slug === params?.slug);
 
   if (!post) {
     return {
@@ -42,9 +40,11 @@ export async function getStaticProps({
     },
     revalidate: 60 * 1,
   };
-}
+};
 
 const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
+  // const router = useRouter();
+  // const { locale } = router;
   if (!post) return null;
 
   const ogImage =
@@ -70,6 +70,22 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
         </Head>
         {/* <h1 className="mb-4 text-2xl font-bold text-gray-700">{post.title}</h1> */}
         {/* <hr /> */}
+        {post.linkRelatived && (
+          <div className="text-center">
+            {post.lang === "en"
+              ? "Xem bài này ở Tiếng Việt:"
+              : "View this post in English:"}
+            <Link
+              href={`/blog/${post.linkRelatived}`}
+              locale={post.lang === "en" ? "vi" : "en"}
+            >
+              <a className="text-indigo-700">
+                {" "}
+                https://thanhle.blog/blog/{post.linkRelatived}
+              </a>
+            </Link>
+          </div>
+        )}
         <NotionRenderer
           components={{
             code: Code,
@@ -147,8 +163,8 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
   );
 };
 
-export async function getStaticPaths() {
-  const table = await getAllPosts();
+export async function getStaticPaths({ locale }: { locale: any }) {
+  const table = await getAllPosts({ locale });
   return {
     paths: table.map((row) => `/blog/${row.slug}`),
     fallback: "blocking",
