@@ -16,6 +16,7 @@ import "react-static-tweets/styles.css";
 import CommentV2 from "../../components/comment-v2";
 import Link from "next/link";
 import { GetStaticProps } from "next";
+import ReactGiscus from "../../components/comment-v3";
 
 export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
   // Get all posts again
@@ -113,13 +114,21 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
         </div>
 
         <div>
-          <CommentV2
+          <ReactGiscus
+            repo="thanhlmm/blog"
+            repoId="R_kgDOGOslWw"
+            category="Ideas"
+            categoryId="DIC_kwDOGOslW84CAR_K"
+            dataMapping="url"
+            theme="preferred_color_scheme"
+          />
+          {/* <CommentV2
             repo="thanhlmm/blog"
             issueTerm="pathname"
             label="comment"
             theme="github-light"
             issueMap="pathname"
-          />
+          /> */}
           {/* <CommentComponent /> */}
         </div>
 
