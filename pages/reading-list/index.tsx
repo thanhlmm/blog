@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import _debounce from "lodash-es/debounce";
+import _uniqBy from "lodash-es/uniqBy";
 
 const NOTION_READING_LIST_ID =
   process.env.NOTION_READING_LIST_ID || "7c547405f812444f85ea8a913a9816db";
@@ -20,7 +21,7 @@ interface ReadingList {
 export const getAllReadingList = async (): Promise<ReadingList[]> => {
   return await fetch(
     `https://notion-api.splitbee.io/v1/table/${NOTION_READING_LIST_ID}`
-  ).then((res) => res.json());
+  ).then((res) => res.json()).then((data) => _uniqBy(data as any[], 'URL'));
 };
 
 export async function getStaticProps() {
