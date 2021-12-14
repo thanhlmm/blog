@@ -1,7 +1,7 @@
 import React from "react";
 import { NextPageContext } from "next";
 import { getAllPosts, Post } from ".";
-import dayjs from 'dayjs';
+import dayjs from "dayjs";
 
 const blogPostsRssXml = (blogPosts: Post[]) => {
   const latestPostDate = new Date();
@@ -46,7 +46,7 @@ export default class Rss extends React.Component {
     if (!res) {
       return;
     }
-    const blogPosts = await getAllPosts();
+    const blogPosts = await getAllPosts({ locale: "en" });
     res.setHeader("Content-Type", "text/xml");
     res.write(getRssXml(blogPosts));
     res.end();

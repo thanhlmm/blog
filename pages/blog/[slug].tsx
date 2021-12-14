@@ -13,12 +13,12 @@ import "react-notion-x/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
 import "react-static-tweets/styles.css";
 // import CommentComponent from "../../components/comment";
-import CommentV2 from "../../components/comment-v2";
+// import CommentV2 from "../../components/comment-v2";
 import Link from "next/link";
 import { GetStaticProps } from "next";
 import ReactGiscus from "../../components/comment-v3";
 
-export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   // Get all posts again
   const posts = await getAllPosts({ locale: "", includeDraft: true });
 
