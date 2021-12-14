@@ -47,11 +47,11 @@ export async function getStaticProps({
 const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
   if (!post) return null;
 
-  const ogImage = post.hero_image?.[0].url || `https://ogsupa.com/api/v1?title=${
-    post.title
-  }&description=${
-    post.description || ""
-  }&&&&background_color=%23056eaa&font_style=font-sans&left_meta=%40cuthanh15&right_meta=thanhle.blog`
+  const ogImage =
+    post.hero_image?.[0].url ||
+    `https://ogsupa.com/api/v1?title=${post.title}&description=${
+      post.description || ""
+    }&&&&background_color=%23056eaa&font_style=font-sans&left_meta=%40cuthanh15&right_meta=thanhle.blog`;
 
   return (
     <TwitterContextProvider
@@ -66,10 +66,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
       <div className="max-w-5xl px-4 mx-auto mt-10 sm:px-6 lg:px-8">
         <Head>
           <title>📝 {post.title}</title>
-          <meta
-            property="og:image"
-            content={ogImage}
-          />
+          <meta property="og:image" content={ogImage} />
         </Head>
         {/* <h1 className="mb-4 text-2xl font-bold text-gray-700">{post.title}</h1> */}
         {/* <hr /> */}
@@ -111,6 +108,10 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
         </div>
 
         <style global jsx>{`
+          .notion {
+            font-size: 18px;
+          }
+
           .notion-hash-link {
             margin-top: 7px;
           }
@@ -132,7 +133,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
             font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo,
               monospace !important;
           }
-          
+
           .notion-asset-caption {
             text-align: center;
           }
