@@ -120,7 +120,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
             category="Ideas"
             categoryId="DIC_kwDOGOslW84CAR_K"
             dataMapping="url"
-            theme="preferred_color_scheme"
+            theme="light"
           />
           {/* <CommentV2
             repo="thanhlmm/blog"
