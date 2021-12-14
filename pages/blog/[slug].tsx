@@ -112,6 +112,10 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
             font-size: 18px;
           }
 
+          .notion-list li {
+            padding-top: 2px;
+          }
+
           .notion-hash-link {
             margin-top: 7px;
           }
