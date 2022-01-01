@@ -1,21 +1,16 @@
-import Head from "next/head";
-import { NotionAPI } from "notion-client";
-import {
-  NotionRenderer,
-  Code,
-  // Collection,
-  // CollectionRow,
-  Modal,
-} from "react-notion-x";
-import { Tweet, TwitterContextProvider } from "react-static-tweets";
-import { getAllPosts, Post } from "../";
-import "react-notion-x/src/styles.css";
-import "prismjs/themes/prism-tomorrow.css";
-import "react-static-tweets/styles.css";
-// import CommentComponent from "../../components/comment";
-// import CommentV2 from "../../components/comment-v2";
-import Link from "next/link";
 import { GetStaticProps } from "next";
+import Head from "next/head";
+import Link from "next/link";
+import { NotionAPI } from "notion-client";
+import "prismjs/themes/prism-tomorrow.css";
+import {
+  Code,
+  Modal, NotionRenderer
+} from "react-notion-x";
+import "react-notion-x/src/styles.css";
+import { Tweet, TwitterContextProvider } from "react-static-tweets";
+import "react-static-tweets/styles.css";
+import { getAllPosts, Post } from "../";
 import ReactGiscus from "../../components/comment-v3";
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
