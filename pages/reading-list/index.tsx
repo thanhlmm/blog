@@ -26,7 +26,7 @@ interface ReadingList {
 
 export const getAllReadingList = async (): Promise<ReadingList[]> => {
   return await fetch(
-    `https://notion.refiapp.workers.dev/v1/table/${NOTION_READING_LIST_ID}`
+    `https://notion.thanhle.workers.dev/v1/table/${NOTION_READING_LIST_ID}`
   )
     .then((res) => res.json())
     .then((data) => _uniqBy(data as any[], "URL"));
