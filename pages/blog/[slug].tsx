@@ -3,10 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { NotionAPI } from "notion-client";
 import "prismjs/themes/prism-tomorrow.css";
-import {
-  Code,
-  Modal, NotionRenderer
-} from "react-notion-x";
+import { Code, Modal, NotionRenderer } from "react-notion-x";
 import "react-notion-x/src/styles.css";
 import { Tweet, TwitterContextProvider } from "react-static-tweets";
 import "react-static-tweets/styles.css";
@@ -160,6 +157,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
 
           .notion-asset-caption {
             text-align: center;
+            width: 100%;
           }
         `}</style>
       </div>
