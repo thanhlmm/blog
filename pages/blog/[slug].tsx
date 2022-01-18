@@ -159,6 +159,11 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
             text-align: center;
             width: 100%;
           }
+
+          .notion-list {
+            overflow: hidden;
+            width: 100%;
+          }
         `}</style>
       </div>
     </TwitterContextProvider>
