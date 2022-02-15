@@ -56,7 +56,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
         },
       }}
     >
-      <div className="max-w-5xl px-4 mx-auto mt-10 sm:px-6 lg:px-8">
+      <div className="max-w-5xl px-4 mx-auto mt-10 font-sans sm:px-6 lg:px-8">
         <Head>
           <title>📝 {post.title}</title>
           <meta property="og:image" content={ogImage} />
@@ -127,6 +127,10 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
         <style global jsx>{`
           .notion {
             font-size: 18px;
+            font-family: ui-sans-serif, system-ui, -apple-system,
+              BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+              "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+              "Segoe UI Symbol", "Noto Color Emoji";
           }
 
           .notion-list li {
