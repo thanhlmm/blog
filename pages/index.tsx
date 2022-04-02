@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CalendarIcon, ChevronRightIcon } from "@heroicons/react/solid";
 import dayjs from "dayjs";
 import { GetStaticProps } from "next";
+import Head from "next/head";
 
 const NOTION_BLOG_ID =
   process.env.NOTION_BLOG_ID || "c0a9456d6fa04bb2af554a310ac7b5ff";
@@ -58,6 +59,12 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 function HomePage({ posts }: { posts: Post[] }) {
   return (
     <div className="max-w-5xl px-4 mx-auto mt-10 sm:px-6 lg:px-8">
+      <Head>
+        <meta
+          name="description"
+          content="I share about Frontend, Engineer and some thought in product and life."
+        />
+      </Head>
       <iframe
         src="https://thanhleblg.substack.com/embed"
         width="100%"

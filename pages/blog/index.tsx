@@ -22,6 +22,7 @@ function BlogList({ posts }: { posts: Post[] }) {
     <div className="max-w-5xl px-4 mx-auto mt-10 sm:px-6 lg:px-8">
       <Head>
         <title>📝 Blog</title>
+        <meta name="description" content="List of my write. Hope it help!" />
       </Head>
       <iframe
         src="https://thanhleblg.substack.com/embed"

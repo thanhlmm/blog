@@ -6,6 +6,10 @@ const MePage = () => {
     <div className="max-w-5xl p-2 mx-auto mt-4 space-y-8">
       <Head>
         <title>🤷‍♂️ Me</title>
+        <meta
+          name="description"
+          content="A boy dreams to create value for others via software product 😴"
+        />
       </Head>
       {/* IDENTITY */}
       <div className="px-4 mt-4 mb-2 text-xl text-center md:mt-8 md:mb-4 md:px-8">
