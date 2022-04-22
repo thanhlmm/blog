@@ -84,11 +84,11 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
         )}
         <NotionRenderer
           components={{
-            code: Code,
+            Code,
             // collection: Collection,
             // collectionRow: CollectionRow,
-            tweet: Tweet,
-            modal: Modal,
+            Tweet,
+            Modal,
           }}
           recordMap={blocks}
           fullPage={true}
