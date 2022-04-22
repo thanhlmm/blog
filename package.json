@@ -11,6 +11,7 @@
     "@heroicons/react": "^1.0.4",
     "@splitbee/web": "^0.3.0",
     "@tailwindcss/forms": "^0.3.4",
+    "date-fns": "^2.28.0",
     "dayjs": "^1.10.7",
     "lodash-es": "^4.17.21",
     "next": "^12.0.8",
@@ -20,7 +21,7 @@
     "react-dom": "^16.12.0",
     "react-hydration-on-demand": "^2.0.1",
     "react-notion": "^0.9.2",
-    "react-notion-x": "^4.14.2",
+    "react-notion-x": "^6.12.3",
     "react-static-tweets": "^0.5.4",
     "static-tweets": "0.5.3",
     "unist-util-visit": "^2.0.3"
