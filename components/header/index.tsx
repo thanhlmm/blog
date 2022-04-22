@@ -119,7 +119,7 @@ export default function Header() {
               </div>
               <div className="flex items-center -mr-2 sm:hidden">
                 {/* Mobile menu button */}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md dark:bg-gray-700 dark:text-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon className="block w-6 h-6" aria-hidden="true" />
@@ -140,8 +140,8 @@ export default function Header() {
                     href={item.href}
                     className={classNames(
                       router.pathname.includes(item.href)
-                        ? "bg-indigo-50 border-indigo-500 text-indigo-700"
-                        : "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800",
+                        ? "bg-blue-50 border-blue-500 text-blue-700 dark:bg-gray-700 dark:text-white"
+                        : "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 dark:text-gray-400",
                       "block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
                     )}
                     aria-current={router.pathname.includes(item.href)}
@@ -151,17 +151,19 @@ export default function Header() {
                 </Link>
               ))}
             </div>
-            <div className="pt-2 pb-3">
-              <ThemeSwitcher />
+            <div className="flex items-center pt-2 pb-3 pl-3">
+              <ThemeSwitcher /> <span className="ml-2">Dark mode</span>
             </div>
-            <div className="pt-4 pb-3 border-t border-gray-200">
+            <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-600">
               <div className="px-4 space-x-3">
                 <a
                   onClick={(e) => handleChangeLang(e, "en")}
                   href="/"
                   className={classNames(
                     "hover:border-gray-300 hover:text-gray-700",
-                    locale === "en" ? "text-gray-700" : "text-gray-500"
+                    locale === "en"
+                      ? "text-gray-700 dark:text-white"
+                      : "text-gray-500 dark:text-gray-400"
                   )}
                 >
                   English
@@ -171,14 +173,16 @@ export default function Header() {
                   href="/vi"
                   className={classNames(
                     "hover:border-gray-300 hover:text-gray-700",
-                    locale === "vi" ? "text-gray-700" : "text-gray-500"
+                    locale === "vi"
+                      ? "text-gray-700 dark:text-white"
+                      : "text-gray-500 dark:text-gray-400"
                   )}
                 >
                   Tiếng Việt
                 </a>
               </div>
             </div>
-            <div className="pt-4 pb-3 border-t border-gray-200">
+            <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-600">
               <div className="flex items-center px-4">
                 <div className="flex-shrink-0">
                   <Image
@@ -190,10 +194,10 @@ export default function Header() {
                   />
                 </div>
                 <div className="ml-3">
-                  <div className="text-base font-medium text-gray-800">
+                  <div className="text-base font-medium text-gray-800 dark:text-white">
                     {user.name}
                   </div>
-                  <div className="text-sm font-medium text-gray-500">
+                  <div className="text-sm font-medium text-gray-500 dark:text-gray-400">
                     {user.email}
                   </div>
                 </div>
