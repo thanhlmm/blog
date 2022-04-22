@@ -57,7 +57,7 @@ const ProjectPage = ({ projects }: { projects: Project[] }) => {
           <div className="text-lg font-medium">Thanh Le</div>
         </div>
       </div>
-      <div className="relative pt-16 pb-32 overflow-hidden bg-white">
+      <div className="relative pt-16 pb-32 overflow-hidden ">
         {projects.map((prj) => {
           if (true) {
             return (
@@ -66,7 +66,7 @@ const ProjectPage = ({ projects }: { projects: Project[] }) => {
                   <div className="max-w-xl px-4 mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
                     <div>
                       {/* <div>
-                      <span className="flex items-center justify-center w-12 h-12 bg-indigo-600 rounded-md">
+                      <span className="flex items-center justify-center w-12 h-12 bg-blue-600 rounded-md">
                         <InboxIcon
                           className="w-6 h-6 text-white"
                           aria-hidden="true"
@@ -74,10 +74,10 @@ const ProjectPage = ({ projects }: { projects: Project[] }) => {
                       </span>
                     </div> */}
                       <div className="mt-6">
-                        <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
+                        <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
                           {prj.name}
                         </h2>
-                        <p className="mt-4 text-lg text-gray-500">
+                        <p className="mt-4 text-lg text-gray-500 dark:text-gray-300">
                           {prj.description}
                         </p>
                         <div className="mt-1 space-x-1">
@@ -92,7 +92,7 @@ const ProjectPage = ({ projects }: { projects: Project[] }) => {
                             <a
                               href={prj.url}
                               target="_blank"
-                              className="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-indigo-700 bg-indigo-100 border border-transparent rounded-md hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                              className="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-blue-700 bg-blue-100 border border-transparent rounded-md dark:bg-blue-700 dark:text-white hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                             >
                               Take a look
                             </a>
@@ -101,7 +101,7 @@ const ProjectPage = ({ projects }: { projects: Project[] }) => {
                           {prj.story && (
                             <a
                               href={prj.story}
-                              className="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-indigo-700 border border-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                              className="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-blue-700 border border-transparent rounded-md dark:text-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                             >
                               Story behind
                             </a>
@@ -167,7 +167,7 @@ const ProjectPage = ({ projects }: { projects: Project[] }) => {
                 <div className="max-w-xl px-4 mx-auto sm:px-6 lg:py-32 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2">
                   <div>
                     {/* <div>
-                    <span className="flex items-center justify-center w-12 h-12 bg-indigo-600 rounded-md">
+                    <span className="flex items-center justify-center w-12 h-12 bg-blue-600 rounded-md">
                       <SparklesIcon
                         className="w-6 h-6 text-white"
                         aria-hidden="true"
@@ -186,7 +186,7 @@ const ProjectPage = ({ projects }: { projects: Project[] }) => {
                           <a
                             href={prj.url}
                             target="_blank"
-                            className="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-indigo-700 bg-indigo-100 border border-transparent rounded-md hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            className="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-blue-700 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                           >
                             Take a look
                           </a>

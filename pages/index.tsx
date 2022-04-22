@@ -74,31 +74,37 @@ function HomePage({ posts }: { posts: Post[] }) {
         scrolling="no"
       ></iframe>
 
-      <div className="overflow-hidden bg-white shadow sm:rounded-md">
-        <ul role="list" className="divide-y divide-gray-200">
+      <div className="overflow-hidden bg-white shadow dark:bg-gray-800 sm:rounded-md">
+        <ul
+          role="list"
+          className="divide-y divide-gray-200 dark:divide-gray-900"
+        >
           {posts.map((post) => (
             <li key={post.id}>
               <Link href={`/blog/${post.slug}`}>
-                <a className="block hover:bg-gray-50">
+                <a className="block hover:bg-gray-50 dark:hover:bg-gray-700">
                   <div className="flex items-center px-4 py-4 sm:px-6">
                     <div className="flex-1 min-w-0 sm:flex sm:items-center sm:justify-between">
                       <div className="truncate">
                         <div className="flex text-sm">
-                          <p className="font-medium text-indigo-600 truncate">
+                          <p className="font-medium text-blue-600 truncate dark:text-blue-500">
                             {post.title}
                           </p>
                         </div>
                         <div className="mt-1 space-x-1">
                           {post.tag?.map((tag) => (
-                            <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-yellow-100 text-yellow-800">
+                            <span
+                              key={tag}
+                              className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-yellow-100 text-yellow-800"
+                            >
                               {tag}
                             </span>
                           ))}
                         </div>
                         <div className="flex mt-2">
-                          <div className="flex items-center text-sm text-gray-500">
+                          <div className="flex items-center text-sm text-gray-500 dark:text-gray-100">
                             <CalendarIcon
-                              className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                              className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400 dark:text-gray-200"
                               aria-hidden="true"
                             />
                             <p>

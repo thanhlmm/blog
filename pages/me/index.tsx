@@ -29,7 +29,7 @@ const MePage = () => {
 
       {/* MY VALUE METRICS */}
       <div>
-        <h1 className="mb-2 text-2xl text-gray-700">
+        <h1 className="mb-2 text-2xl text-gray-700 dark:text-white">
           What I value and believe
         </h1>
         <div className="px-3 pl-2 mx-auto md:pl-10">
@@ -51,7 +51,7 @@ const MePage = () => {
       </div>
 
       <div>
-        <h1 className="mb-2 text-2xl text-gray-700">Facts</h1>
+        <h1 className="mb-2 text-2xl text-gray-700 dark:text-white">Facts</h1>
         <div className="pl-2 space-y-4 md:pl-10">
           <div>
             <p className="underline ">Why do I try to put lots of emojis?</p>
@@ -74,7 +74,9 @@ const MePage = () => {
       </div>
 
       <div>
-        <h1 className="mb-2 text-2xl text-gray-700">Connect with me</h1>
+        <h1 className="mb-2 text-2xl text-gray-700 dark:text-white">
+          Connect with me
+        </h1>
         <div className="pl-2 space-x-4 md:pl-10">
           <a
             className="text-indigo-600"

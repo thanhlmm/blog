@@ -3,6 +3,7 @@ import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
+import ThemeSwitcher from "../themeSwitcher";
 
 const user = {
   name: "Thanh Le",
@@ -35,7 +36,10 @@ export default function Header() {
   };
 
   return (
-    <Disclosure as="nav" className="bg-white border-b border-gray-200">
+    <Disclosure
+      as="nav"
+      className="bg-white border-b border-gray-200 dark:bg-gray-900 dark:text-white dark:border-gray-600"
+    >
       {({ open }) => (
         <>
           <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -52,8 +56,8 @@ export default function Header() {
                       <a
                         className={classNames(
                           router.pathname.includes(item.href)
-                            ? "border-indigo-500 text-gray-900"
-                            : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700",
+                            ? "border-blue-500 text-gray-900 dark:text-white"
+                            : "border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 hover:text-gray-700",
                           "inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                         )}
                         aria-current={router.pathname.includes(item.href)}
@@ -65,6 +69,9 @@ export default function Header() {
                 </div>
               </div>
               <div className="hidden sm:ml-6 sm:flex sm:items-center">
+                <div className="pt-3 pb-2">
+                  <ThemeSwitcher />
+                </div>
                 <div className="relative ml-3">
                   <div className="space-x-3">
                     <a
@@ -72,7 +79,9 @@ export default function Header() {
                       href="/"
                       className={classNames(
                         "text-sm hover:border-gray-300 hover:text-gray-700",
-                        locale === "en" ? "text-gray-700" : "text-gray-500"
+                        locale === "en"
+                          ? "text-gray-700 dark:text-white"
+                          : "text-gray-500 dark:text-gray-300"
                       )}
                     >
                       English
@@ -82,7 +91,9 @@ export default function Header() {
                       href="/vi"
                       className={classNames(
                         "text-sm hover:border-gray-300 hover:text-gray-700",
-                        locale === "vi" ? "text-gray-700" : "text-gray-500"
+                        locale === "vi"
+                          ? "text-gray-700 dark:text-white"
+                          : "text-gray-500 dark:text-gray-300"
                       )}
                     >
                       Tiếng Việt
@@ -139,6 +150,9 @@ export default function Header() {
                   </a>
                 </Link>
               ))}
+            </div>
+            <div className="pt-2 pb-3">
+              <ThemeSwitcher />
             </div>
             <div className="pt-4 pb-3 border-t border-gray-200">
               <div className="px-4 space-x-3">

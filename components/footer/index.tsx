@@ -5,7 +5,7 @@ const Footer = () => {
         Follow me{" "}
         <a
           href="https://twitter.com/cuthanh15"
-          className="text-indigo-600"
+          className="text-blue-600"
           target="_blank"
         >
           @cuthanh15

@@ -121,7 +121,7 @@ function BlogList({ items }: { items: ReadingList[] }) {
             value={keyword}
             onChange={(e) => handleChangeKeyword(e.target.value)}
             placeholder="Quick search"
-            className="block w-full p-3 pr-12 text-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="block w-full p-3 pr-12 text-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:bg-gray-100"
           />
           <div className="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">
             <kbd className="inline-flex items-center px-2 font-sans text-sm font-medium text-gray-400 border border-gray-200 rounded">
@@ -148,7 +148,7 @@ function BlogList({ items }: { items: ReadingList[] }) {
             />
           </Switch>
           <Switch.Label as="span" className="ml-3">
-            <span className="text-sm font-medium text-gray-900 whitespace-nowrap">
+            <span className="text-sm font-medium text-gray-900 dark:text-white whitespace-nowrap">
               Must read
             </span>
           </Switch.Label>
@@ -157,7 +157,7 @@ function BlogList({ items }: { items: ReadingList[] }) {
 
       <div className="grid justify-around grid-cols-1 gap-4 px-2 align-top gap-x-8 md:grid-cols-2 lg:grid-cols-3">
         {readingList.map((item) => (
-          <div className="w-full mx-auto mb-5 bg-white border border-gray-200 rounded-lg shadow-md">
+          <div className="w-full mx-auto mb-5 bg-white border border-gray-200 rounded-lg shadow-md dark:border-gray-700 dark:bg-gray-800">
             <a href={item.URL} target="_blank">
               <img
                 className="object-cover w-full h-56 rounded-t-lg"
@@ -171,7 +171,7 @@ function BlogList({ items }: { items: ReadingList[] }) {
             </a>
             <div className="p-5">
               <a href={item.URL} target="_blank">
-                <h5 className="mb-1 text-lg font-bold tracking-tight text-gray-900">
+                <h5 className="mb-1 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
                   {item.Title}
                 </h5>
               </a>
@@ -199,7 +199,7 @@ function BlogList({ items }: { items: ReadingList[] }) {
                   Must read
                 </div>
               )}
-              <p className="mb-3 text-sm font-normal text-gray-700">
+              <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-300">
                 {item.Summary}
               </p>
               {/* <a
