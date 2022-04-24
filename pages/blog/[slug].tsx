@@ -63,6 +63,8 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
         <Head>
           <title>📝 {post.title}</title>
           <meta property="og:image" content={ogImage} />
+          <meta name="description" content={post?.description} />
+          <meta property="og:description" content={post?.description} />
         </Head>
         {/* <h1 className="mb-4 text-2xl font-bold text-gray-700">{post.title}</h1> */}
         {/* <hr /> */}
