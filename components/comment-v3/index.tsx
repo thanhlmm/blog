@@ -24,11 +24,12 @@ interface ReactGiscusProps {
   issueTerm?: string;
   issueNumber?: number;
   label?: string;
-  theme: Theme;
+  // theme: Theme;
 }
 
 interface ReactGiscusState {
   pending: boolean;
+  theme: "light" | "dark";
 }
 
 export default class ReactGiscus extends React.Component<
@@ -37,16 +38,19 @@ export default class ReactGiscus extends React.Component<
 > {
   reference: React.RefObject<HTMLDivElement>;
   scriptElement: any;
+  interval: any;
 
   constructor(props: ReactGiscusProps) {
     super(props);
     this.reference = React.createRef<HTMLDivElement>();
-    this.state = { pending: true };
+    this.state = { pending: true, theme: "light" };
+    this.interval = null;
   }
 
   componentDidMount(): void {
-    const { repo, repoId, category, categoryId, dataMapping, label, theme } =
+    const { repo, repoId, category, categoryId, dataMapping, label } =
       this.props;
+    const { theme } = this.state;
     const scriptElement = document.createElement("script");
     scriptElement.src = "https://giscus.app/client.js";
     scriptElement.async = true;
@@ -70,6 +74,24 @@ export default class ReactGiscus extends React.Component<
     // TODO: Check current availability
     this.scriptElement = scriptElement;
     this.reference.current?.appendChild(scriptElement);
+
+    this.interval = setInterval(() => {
+      this.checkTheme();
+    }, 300);
+  }
+
+  componentWillUnmount() {
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
+  }
+
+  checkTheme() {
+    if (document.documentElement.classList.contains("dark")) {
+      this.setState({ theme: "dark" });
+    } else {
+      this.setState({ theme: "light" });
+    }
   }
 
   render(): React.ReactElement {
