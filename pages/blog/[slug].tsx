@@ -5,8 +5,6 @@ import Image from "next/image";
 import { NotionAPI } from "notion-client";
 import "prismjs/themes/prism-tomorrow.css";
 import { NotionRenderer } from "react-notion-x";
-import { Code } from "react-notion-x/build/third-party/code";
-import { Modal } from "react-notion-x/build/third-party/modal";
 import TweetEmbed from "react-tweet-embed";
 import "react-notion-x/src/styles.css";
 // import "./style.css";
@@ -14,6 +12,20 @@ import "react-notion-x/src/styles.css";
 import "react-static-tweets/styles.css";
 import { getAllPosts, Post } from "../";
 import ReactGiscus from "../../components/comment-v3";
+
+import dynamic from "next/dynamic";
+
+const Code = dynamic(async () => {
+  const m = await import("react-notion-x/build/third-party/code");
+  return m.Code;
+});
+
+const Modal = dynamic(
+  () => import("react-notion-x/build/third-party/modal").then((m) => m.Modal),
+  {
+    ssr: false,
+  }
+);
 
 const TweetRender = ({ id }: { id: string }) => {
   return <TweetEmbed tweetId={id} />;
