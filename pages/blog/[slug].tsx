@@ -127,6 +127,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
           className="mt-3 mb-3"
           frameBorder="0"
           scrolling="no"
+          loading="lazy"
         ></iframe>
       </div>
 
