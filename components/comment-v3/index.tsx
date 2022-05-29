@@ -69,7 +69,10 @@ export default class ReactGiscus extends React.Component<
 
     // TODO: Check current availability
     this.scriptElement = scriptElement;
-    this.reference.current?.appendChild(scriptElement);
+
+    setTimeout(() => {
+      this.reference.current?.appendChild(scriptElement);
+    }, 3000);
   }
 
   render(): React.ReactElement {
