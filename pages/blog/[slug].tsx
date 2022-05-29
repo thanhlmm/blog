@@ -1,6 +1,7 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import { NotionAPI } from "notion-client";
 import "prismjs/themes/prism-tomorrow.css";
 import { NotionRenderer } from "react-notion-x";
@@ -94,6 +95,8 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
           Code,
           // collection: Collection,
           // collectionRow: CollectionRow,
+          nextImage: Image,
+          nextLink: Link,
           Tweet: TweetRender,
           Modal,
         }}
