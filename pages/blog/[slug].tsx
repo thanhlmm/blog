@@ -9,7 +9,7 @@ import TweetEmbed from "react-tweet-embed";
 import "react-notion-x/src/styles.css";
 // import "./style.css";
 // import { Tweet, TwitterContextProvider } from "react-static-tweets";
-import "react-static-tweets/styles.css";
+// import "react-static-tweets/styles.css";
 import { getAllPosts, Post } from "../";
 // import ReactGiscus from "../../components/comment-v3";
 
@@ -144,7 +144,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
           category="Ideas"
           categoryId="DIC_kwDOGOslW84CAR_K"
           dataMapping="specific"
-          dataTerm={window.location.hostname + window.location.pathname}
+          // dataTerm={window.location.hostname + window.location.pathname}
           theme="preferred_color_scheme"
         />
         {/* <CommentV2
