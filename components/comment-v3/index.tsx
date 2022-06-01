@@ -6,7 +6,7 @@ export type MappingType =
   | "title"
   | "og:title"
   | "issue-number"
-  | "issue-term";
+  | "specific";
 
 export type Theme =
   | "light"
@@ -21,7 +21,7 @@ interface ReactGiscusProps {
   category: string;
   categoryId: string;
   dataMapping: MappingType;
-  issueTerm?: string;
+  dataTerm?: string;
   issueNumber?: number;
   label?: string;
   theme: Theme;
@@ -45,8 +45,16 @@ export default class ReactGiscus extends React.Component<
   }
 
   componentDidMount(): void {
-    const { repo, repoId, category, categoryId, dataMapping, label, theme } =
-      this.props;
+    const {
+      repo,
+      repoId,
+      category,
+      categoryId,
+      dataMapping,
+      dataTerm,
+      label,
+      theme,
+    } = this.props;
     const scriptElement = document.createElement("script");
     scriptElement.src = "https://giscus.app/client.js";
     scriptElement.async = true;
@@ -56,6 +64,9 @@ export default class ReactGiscus extends React.Component<
     scriptElement.setAttribute("data-category", category);
     scriptElement.setAttribute("data-category-id", categoryId);
     scriptElement.setAttribute("data-mapping", dataMapping);
+    if (dataTerm) {
+      scriptElement.setAttribute("data-term", dataTerm);
+    }
     scriptElement.setAttribute("data-reactions-enabled", "1");
     scriptElement.setAttribute("data-emit-metadata", "0");
     scriptElement.setAttribute("data-theme", theme);

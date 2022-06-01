@@ -11,9 +11,15 @@ import "react-notion-x/src/styles.css";
 // import { Tweet, TwitterContextProvider } from "react-static-tweets";
 import "react-static-tweets/styles.css";
 import { getAllPosts, Post } from "../";
-import ReactGiscus from "../../components/comment-v3";
+// import ReactGiscus from "../../components/comment-v3";
 
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
+
+const ReactGiscus = dynamic(() => import("../../components/comment-v3"), {
+  ssr: false,
+  loading: () => <p>Loading Comments...</p>,
+});
 
 const Code = dynamic(async () => {
   const m = await import("react-notion-x/build/third-party/code");
@@ -57,9 +63,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
-  // const router = useRouter();
+  const router = useRouter();
   // const { locale } = router;
   if (!post) return null;
+
+  console.log(router);
 
   const ogImage =
     post.hero_image?.[0].url ||
@@ -137,7 +145,8 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
           repoId="R_kgDOGOslWw"
           category="Ideas"
           categoryId="DIC_kwDOGOslW84CAR_K"
-          dataMapping="url"
+          dataMapping="specific"
+          dataTerm={window.location.hostname + window.location.pathname}
           theme="preferred_color_scheme"
         />
         {/* <CommentV2
