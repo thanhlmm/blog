@@ -51,7 +51,7 @@ export default class ReactGiscus extends React.Component<
       category,
       categoryId,
       dataMapping,
-      dataTerm,
+      // dataTerm,
       label,
       theme,
     } = this.props;
