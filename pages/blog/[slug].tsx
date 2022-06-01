@@ -14,7 +14,7 @@ import { getAllPosts, Post } from "../";
 // import ReactGiscus from "../../components/comment-v3";
 
 import dynamic from "next/dynamic";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 
 const ReactGiscus = dynamic(() => import("../../components/comment-v3"), {
   ssr: false,
@@ -63,11 +63,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
-  const router = useRouter();
+  // const router = useRouter();
   // const { locale } = router;
   if (!post) return null;
-
-  console.log(router);
 
   const ogImage =
     post.hero_image?.[0].url ||
