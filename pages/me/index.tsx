@@ -13,7 +13,7 @@ const MePage = () => {
       </Head>
       {/* IDENTITY */}
       <div className="px-4 mt-4 mb-2 text-xl text-center md:mt-8 md:mb-4 md:px-8">
-        "A boy dreams to create value for others via software product 😴"
+        "A boy dreams to create value for others via software products 😴"
         <br />
         <div className="mt-4">
           <Image
