@@ -70,14 +70,15 @@ function HomePage({ posts }: { posts: Post[] }) {
           content="I share about Frontend, Engineer and some thought in product and life."
         />
       </Head>
-      <iframe
+      {/* <iframe
         src="https://thanhleblg.substack.com/embed"
         width="100%"
         height="250"
         className="mb-8"
         frameBorder="0"
         scrolling="no"
-      ></iframe>
+        loading="lazy"
+      ></iframe> */}
 
       <div className="overflow-hidden bg-white shadow dark:bg-gray-800 sm:rounded-md">
         <ul
