@@ -33,10 +33,15 @@ export const getAllPosts = async ({
     .then((res) => res.json())
     .then((res) =>
       res
-        .filter((row: Post) =>
-          includeDraft ? true : row.status === "Published"
-        )
-        .filter((row: Post) => (locale ? row.lang === locale : true))
+        .filter((row: Post) => includeDraft || row.status === "Published")
+        .filter((row: Post) => {
+          console.log(row);
+          return locale
+            ? row.linkRelatived
+              ? row.lang === locale
+              : true
+            : true;
+        })
         .sort(
           (a: Post, b: Post) =>
             dayjs(b.date, "YYYY-MM-DD").unix() -
