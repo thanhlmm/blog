@@ -11,7 +11,7 @@ const user = {
   imageUrl: "/me.jpeg",
 };
 const navigation = [
-  { name: "📝 Blog", href: "/blog" },
+  { name: "📝 Blog", href: "/" },
   { name: "📚 Reading list", href: "/reading-list" },
   { name: "💡 Projects", href: "/project" },
   { name: "🤷‍♂️ Me", href: "/me" },
