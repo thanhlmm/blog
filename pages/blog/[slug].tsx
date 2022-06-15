@@ -129,7 +129,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
         <iframe
           src="https://thanhleblg.substack.com/embed"
           width="100%"
-          height="120"
+          height="250"
           className="mt-3 mb-3"
           frameBorder="0"
           scrolling="no"
