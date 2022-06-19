@@ -61,7 +61,7 @@ const MePage = () => {
           <div>
             <p className="underline ">My hobbies?</p>
             <p className="">
-              Running 🏃‍♂️, trekking 🧗‍♂️, Dota 2, lost in my thought while driving
+              Running 🏃‍♂️, trekking 🧗‍♂️, Dota 2, lost in my thought while riding
               🚴‍♂️
             </p>
           </div>
