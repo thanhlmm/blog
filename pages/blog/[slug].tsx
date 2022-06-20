@@ -137,7 +137,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
         ></iframe>
       </div>
 
-      <div>
+      <div className="max-w-5xl mx-auto">
         <ReactGiscus
           repo="thanhlmm/blog"
           repoId="R_kgDOGOslWw"
