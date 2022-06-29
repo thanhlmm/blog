@@ -21,7 +21,7 @@ interface ReactGiscusProps {
   category: string;
   categoryId: string;
   dataMapping: MappingType;
-  dataTerm?: string;
+  dataTerm?: () => string;
   issueNumber?: number;
   label?: string;
   theme: Theme;
@@ -67,7 +67,7 @@ export default class ReactGiscus extends React.Component<
     if (dataMapping === "specific" && dataTerm) {
       scriptElement.setAttribute(
         "data-term",
-        dataTerm
+        dataTerm()
         // window.location.hostname + window.location.pathname
       );
     }

@@ -35,7 +35,6 @@ export const getAllPosts = async ({
       res
         .filter((row: Post) => includeDraft || row.status === "Published")
         .filter((row: Post) => {
-          console.log(row);
           return locale
             ? row.linkRelatived
               ? row.lang === locale
