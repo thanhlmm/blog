@@ -83,7 +83,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
     //     },
     //   }}
     // >
-    <div className="max-w-5xl px-4 mx-auto mt-10 font-sans sm:px-6 lg:px-8">
+    <div className="px-4 mx-auto mt-10 font-sans sm:px-6 lg:px-8">
       <Head>
         <title>📝 {post.title}</title>
         <meta property="og:image" content={ogImage} />
@@ -137,7 +137,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
         ></iframe>
       </div>
 
-      <div>
+      <div className="max-w-5xl mx-auto">
         <ReactGiscus
           repo="thanhlmm/blog"
           repoId="R_kgDOGOslWw"
