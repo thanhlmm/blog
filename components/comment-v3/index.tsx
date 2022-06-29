@@ -51,7 +51,7 @@ export default class ReactGiscus extends React.Component<
       category,
       categoryId,
       dataMapping,
-      // dataTerm,
+      dataTerm,
       label,
       theme,
     } = this.props;
@@ -64,10 +64,11 @@ export default class ReactGiscus extends React.Component<
     scriptElement.setAttribute("data-category", category);
     scriptElement.setAttribute("data-category-id", categoryId);
     scriptElement.setAttribute("data-mapping", dataMapping);
-    if (dataMapping === "specific") {
+    if (dataMapping === "specific" && dataTerm) {
       scriptElement.setAttribute(
         "data-term",
-        window.location.hostname + window.location.pathname
+        dataTerm
+        // window.location.hostname + window.location.pathname
       );
     }
     scriptElement.setAttribute("data-reactions-enabled", "1");

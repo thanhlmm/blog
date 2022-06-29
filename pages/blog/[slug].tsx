@@ -144,6 +144,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
           category="Ideas"
           categoryId="DIC_kwDOGOslW84CAR_K"
           dataMapping="specific"
+          dataTerm={`${window.location.hostname}/${post.lang}/${post.slug}`}
           // dataTerm={window.location.hostname + window.location.pathname}
           theme="preferred_color_scheme"
         />
