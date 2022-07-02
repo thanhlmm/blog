@@ -20,16 +20,18 @@ function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" type="image/x-icon" href="/assets/favicon.png"></link>
         <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-E1P0FRENZE"
+        ></script>
+        <script
           dangerouslySetInnerHTML={{
-            __html: `<!-- Global site tag (gtag.js) - Google Analytics -->
-              <script async src="https://www.googletagmanager.com/gtag/js?id=G-E1P0FRENZE"></script>
-              <script>
+            __html: `
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
 
                 gtag('config', 'G-E1P0FRENZE');
-              </script>`,
+              `,
           }}
         ></script>
       </Head>
