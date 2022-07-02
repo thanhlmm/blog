@@ -19,6 +19,19 @@ function App({ Component, pageProps }: AppProps) {
         <title>ThanhLe Blog - Homepage</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" type="image/x-icon" href="/assets/favicon.png"></link>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `<!-- Global site tag (gtag.js) - Google Analytics -->
+              <script async src="https://www.googletagmanager.com/gtag/js?id=G-E1P0FRENZE"></script>
+              <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-E1P0FRENZE');
+              </script>`,
+          }}
+        ></script>
       </Head>
       <Header />
       <Component {...pageProps} />
