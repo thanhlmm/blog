@@ -5,12 +5,17 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import { appWithTranslation } from "next-i18next";
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
 import "../styles/globals.css";
 
 splitbee.init({
   scriptUrl: "/bee.js",
   apiUrl: "/_hive",
 });
+
+// Create a client
+const queryClient = new QueryClient();
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -36,7 +41,9 @@ function App({ Component, pageProps }: AppProps) {
         ></script>
       </Head>
       <Header />
-      <Component {...pageProps} />
+      <QueryClientProvider client={queryClient}>
+        <Component {...pageProps} />
+      </QueryClientProvider>
       <Footer />
     </div>
   );
