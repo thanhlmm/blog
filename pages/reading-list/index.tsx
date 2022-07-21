@@ -150,7 +150,7 @@ function BlogList() {
         </div>
       )}
       <div className="grid justify-around grid-cols-1 gap-4 px-2 align-top gap-x-8 md:grid-cols-2 lg:grid-cols-3">
-        {readingList.map((item) => (
+        {readingList.map((item: any) => (
           <div className="w-full mx-auto mb-5 bg-white border border-gray-200 rounded-lg shadow-md dark:border-gray-700 dark:bg-gray-800">
             <a href={item.link} target="_blank">
               <img
@@ -171,8 +171,8 @@ function BlogList() {
               </a>
               <div className="mb-1 space-x-1">
                 {(item?.tags || [])
-                  .filter((tag) => tag !== "must read")
-                  .map((tag) => (
+                  .filter((tag: string) => tag !== "must read")
+                  .map((tag: string) => (
                     <span
                       key={tag}
                       className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800"
