@@ -31,7 +31,7 @@ function BlogList() {
       return fetchReadingList(pageParam || 0, queryKey[1]);
     },
     {
-      getNextPageParam: (lastPage, pages) => {
+      getNextPageParam: (_lastPage, pages) => {
         return pages.length;
       },
     }
@@ -55,7 +55,8 @@ function BlogList() {
 
   const handleChangeKeyword = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      setKeyword(e.target.value);
+      // @ts-ignore
+      setKeyword(e.target?.value);
     }
   };
 
@@ -69,6 +70,7 @@ function BlogList() {
   useEffect(() => {
     // This is bad to use useEffect to change the keyword. But i'm too lazy :)
     setKeyword(enabledEditor ? '"#must read"' : "");
+    // @ts-ignore
     searchInputRef.current?.value = enabledEditor ? '"#must read"' : "";
   }, [enabledEditor]);
 
