@@ -37,7 +37,7 @@ const TweetRender = ({ id }: { id: string }) => {
   return <TweetEmbed tweetId={id} />;
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   // Get all posts again
   const posts = await getAllPosts({ locale: "", includeDraft: true });
 
@@ -52,6 +52,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const notion = new NotionAPI();
   const blocks = await notion.getPage(post.id);
+
+  if (post.lang !== locale) {
+    return {
+      redirect: {
+        destination: `${locale === "vi" ? "/" : "/en"}/blog/${post.slug}`,
+        permanent: true,
+      },
+    };
+  }
 
   return {
     props: {
