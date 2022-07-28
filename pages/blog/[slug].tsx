@@ -54,12 +54,12 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   const blocks = await notion.getPage(post.id);
 
   if (post.lang !== locale) {
-    return {
-      redirect: {
-        destination: `${locale === "vi" ? "/" : "/en"}/blog/${post.slug}`,
-        permanent: true,
-      },
-    };
+    // return {
+    //   redirect: {
+    //     destination: `${locale === "vi" ? "/" : "/en"}/blog/${post.slug}`,
+    //     permanent: true,
+    //   },
+    // };
   }
 
   return {
