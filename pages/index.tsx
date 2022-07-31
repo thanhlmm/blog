@@ -86,7 +86,7 @@ function HomePage({ posts }: { posts: Post[] }) {
         >
           {posts.map((post) => (
             <li key={post.id}>
-              <Link href={`/blog/${post.slug}`}>
+              <Link href={`/blog/${post.slug}`} locale={post.lang}>
                 <a className="block hover:bg-gray-50 dark:hover:bg-gray-700">
                   <div className="flex items-center px-4 py-4 sm:px-6">
                     <div className="flex-1 min-w-0 sm:flex sm:items-center sm:justify-between">
