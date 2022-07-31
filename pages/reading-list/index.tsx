@@ -70,8 +70,10 @@ function BlogList() {
   useEffect(() => {
     // This is bad to use useEffect to change the keyword. But i'm too lazy :)
     setKeyword(enabledEditor ? '"#must read"' : "");
-    // @ts-ignore
-    searchInputRef.current?.value = enabledEditor ? '"#must read"' : "";
+    if (searchInputRef.current) {
+      // @ts-ignore
+      searchInputRef.current.value = enabledEditor ? '"#must read"' : "";
+    }
   }, [enabledEditor]);
 
   console.log({ keyword });
