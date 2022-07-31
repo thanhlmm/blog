@@ -117,22 +117,25 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
           </Link>
         </div>
       )}
-      <NotionRenderer
-        components={{
-          Code,
-          // collection: Collection,
-          // collectionRow: CollectionRow,
-          nextImage: Image,
-          nextLink: Link,
-          Tweet: TweetRender,
-          Modal,
-        }}
-        recordMap={blocks}
-        fullPage={true}
-        darkMode={false}
-        showTableOfContents
-        minTableOfContentsItems={3}
-      />
+
+      <article>
+        <NotionRenderer
+          components={{
+            Code,
+            // collection: Collection,
+            // collectionRow: CollectionRow,
+            nextImage: Image,
+            nextLink: Link,
+            Tweet: TweetRender,
+            Modal,
+          }}
+          recordMap={blocks}
+          fullPage={true}
+          darkMode={false}
+          showTableOfContents
+          minTableOfContentsItems={3}
+        />
+      </article>
 
       <div>
         <iframe
