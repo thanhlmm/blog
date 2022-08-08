@@ -218,6 +218,10 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
           overflow: hidden;
           width: 100%;
         }
+        
+        .notion-bookmark-title {
+          font-weight: 500;
+        }
 
         .dark .notion {
           --fg-color: rgba(255, 255, 255, 0.9);
