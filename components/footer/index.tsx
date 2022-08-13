@@ -2,7 +2,7 @@ import { XIcon } from "@heroicons/react/outline";
 import { useState } from "react";
 
 const Footer = () => {
-  const [showBanner, toogleShowBanner] = useState(true);
+  // const [showBanner, toogleShowBanner] = useState(true);
 
   return (
     <>
@@ -18,7 +18,7 @@ const Footer = () => {
           </a>
         </p>
       </div>
-      {showBanner && (
+      {/* {showBanner && (
         <div className="fixed inset-x-0 bottom-0 pb-2 sm:pb-5">
           <div className="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="p-1 bg-yellow-500 rounded-lg shadow-lg sm:p-2">
@@ -48,7 +48,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 };
