@@ -80,7 +80,7 @@ export default function Header() {
                       className={classNames(
                         "text-sm hover:border-gray-300 hover:text-gray-700",
                         locale === "en"
-                          ? "text-gray-900 dark:text-white"
+                          ? "text-gray-900 font-medium dark:text-white"
                           : "text-gray-500 dark:text-gray-300"
                       )}
                     >
@@ -92,7 +92,7 @@ export default function Header() {
                       className={classNames(
                         "text-sm hover:border-gray-300 hover:text-gray-700",
                         locale === "vi"
-                          ? "text-gray-900 dark:text-white"
+                          ? "text-gray-900 font-medium dark:text-white"
                           : "text-gray-500 dark:text-gray-300"
                       )}
                     >
@@ -162,7 +162,7 @@ export default function Header() {
                   className={classNames(
                     "hover:border-gray-300 hover:text-gray-700",
                     locale === "en"
-                      ? "text-gray-900 dark:text-white"
+                      ? "text-gray-900 font-medium dark:text-white"
                       : "text-gray-500 dark:text-gray-400"
                   )}
                 >
@@ -174,7 +174,7 @@ export default function Header() {
                   className={classNames(
                     "hover:border-gray-300 hover:text-gray-700",
                     locale === "vi"
-                      ? "text-gray-900 dark:text-white"
+                      ? "text-gray-900 font-medium dark:text-white"
                       : "text-gray-500 dark:text-gray-400"
                   )}
                 >
