@@ -93,7 +93,7 @@ function HomePage({ posts }: { posts: Post[] }) {
               <Link href={`/blog/${post.slug}`} locale={post.lang}>
                 <a className="block">
                   <div className="px-4 py-4 sm:px-6">
-                    <div className="flex items-center mb-2 text-xs text-gray-400 dark:text-gray-100">
+                    <div className="flex items-center mb-2 text-xs text-gray-500 dark:text-gray-100">
                       <time dateTime={post.date}>
                         {dayjs(post.date, "YYYY-MM-DD").format("MMM DD, YYYY")}
                       </time>
