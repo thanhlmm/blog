@@ -80,7 +80,7 @@ function HomePage({ posts }: { posts: Post[] }) {
 
       <h2 className="mb-2 text-xl font-semibold">Posts</h2>
       <div className="mb-8 text-gray-700 dark:text-gray-100">
-        I share about Frontend, Engineer and some thought in product and life 😴
+        I share about Frontend, Engineer and some thought in Product and Life 😴
       </div>
 
       <div className="overflow-hidden">
