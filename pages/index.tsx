@@ -88,8 +88,11 @@ function HomePage({ posts }: { posts: Post[] }) {
           {posts.map((post) => (
             <div
               key={post.id}
-              className="transition-all bg-white border border-gray-200 hover:border-blue-400 dark:hover:border-blue-400 dark:border-gray-700 dark:bg-gray-800"
+              className="relative transition-all bg-white border border-gray-200 hover:border-blue-400 dark:hover:border-blue-400 dark:border-gray-700 dark:bg-gray-800"
             >
+              {dayjs(post.date, "YYYY-MM-DD").isAfter(
+                dayjs().subtract(14, "d")
+              ) && <div className="absolute text-xl top-2 right-2">✨</div>}
               <Link href={`/blog/${post.slug}`} locale={post.lang}>
                 <a className="block">
                   <div className="px-4 py-4 sm:px-6">
