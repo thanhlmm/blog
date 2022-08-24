@@ -109,7 +109,7 @@ const MePage = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Google Meet
+            Meet me
           </a>
         </div>
       </div>
