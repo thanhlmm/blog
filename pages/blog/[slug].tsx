@@ -223,6 +223,10 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
           font-weight: 500;
         }
 
+        .notion-to-do {
+          margin-left: 16px;
+        }
+
         .dark .notion {
           --fg-color: rgba(255, 255, 255, 0.9);
           --fg-color-0: var(--fg-color);
