@@ -152,6 +152,7 @@ const ProjectPage = ({ projects }: { projects: Project[] }) => {
                           className="w-full shadow-xl rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
                           src={prj.image?.[0].url}
                           alt={prj.description}
+                          loading="lazy"
                         />
                       </a>
                     </div>
