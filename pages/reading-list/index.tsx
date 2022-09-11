@@ -94,7 +94,7 @@ function BlogList() {
             // value={keyword}
             onKeyPress={handleChangeKeyword}
             placeholder="Quick search"
-            className="block w-full p-3 pr-12 text-lg border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm dark:bg-gray-100"
+            className="block w-full p-3 pr-12 text-lg border-gray-300 rounded-md shadow-sm dark:text-gray-700 focus:ring-blue-500 focus:border-blue-500 sm:text-sm dark:bg-gray-100"
           />
           <div className="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">
             <kbd className="inline-flex items-center px-2 font-sans text-sm font-medium text-gray-400 border border-gray-200 rounded">
