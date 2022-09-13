@@ -28,7 +28,7 @@ function App({ Component, pageProps }: AppProps) {
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-E1P0FRENZE"
         ></script>
-        <script
+        {/* <script
           data-ad-client="ca-pub-9218747748878734"
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
@@ -37,7 +37,7 @@ function App({ Component, pageProps }: AppProps) {
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9218747748878734"
           crossOrigin="anonymous"
-        ></script>
+        ></script> */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
