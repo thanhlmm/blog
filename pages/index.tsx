@@ -83,7 +83,9 @@ const PostList = ({ posts }: { posts: Post[] }) => {
                     {post.title}
                   </p>
                 </div>
-                <div className="text-sm text-gray-600">{post.description}</div>
+                <div className="text-sm text-gray-600 dark:text-gray-50">
+                  {post.description}
+                </div>
                 {/* <div className="space-x-1">
                   {post.tag?.map((tag) => (
                     <span
@@ -122,8 +124,7 @@ function HomePage({ posts }: { posts: Post[] }) {
         loading="lazy"
       ></iframe> */}
 
-      <h2 className="mb-2 text-xl font-semibold">Posts</h2>
-      <div className="mb-8 text-gray-700 dark:text-gray-100">
+      <div className="mb-4 text-gray-700 dark:text-gray-100">
         I share about Frontend, Engineer and some thought in Product and Life 😴
       </div>
 
@@ -167,13 +168,19 @@ function HomePage({ posts }: { posts: Post[] }) {
       </div>
 
       <div className="overflow-hidden">
-        <h3 className="my-3 text-lg font-medium text-gray-700" id="new">
+        <h3
+          className="my-3 text-lg font-medium text-gray-700 dark:text-gray-100"
+          id="new"
+        >
           ✨ New
         </h3>
         {/* <hr className="mb-4" /> */}
         <PostList posts={posts.slice(0, 6)} />
 
-        <h3 className="mt-10 mb-3 text-lg font-medium text-gray-700">
+        <h3
+          className="mt-10 mb-3 text-lg font-medium text-gray-700 dark:text-gray-100"
+          id="engineer"
+        >
           👨‍💻 Engineer
         </h3>
         {/* <hr className="mb-4" /> */}
@@ -182,7 +189,7 @@ function HomePage({ posts }: { posts: Post[] }) {
         />
 
         <h3
-          className="mt-10 mb-3 text-lg font-medium text-gray-700"
+          className="mt-10 mb-3 text-lg font-medium text-gray-700 dark:text-gray-100"
           id="blockchain"
         >
           ⛓ Blockchain
@@ -193,7 +200,7 @@ function HomePage({ posts }: { posts: Post[] }) {
         />
 
         <h3
-          className="mt-10 mb-3 text-lg font-medium text-gray-700"
+          className="mt-10 mb-3 text-lg font-medium text-gray-700 dark:text-gray-100"
           id="product"
         >
           🚀 Product
@@ -204,7 +211,7 @@ function HomePage({ posts }: { posts: Post[] }) {
         />
 
         <h3
-          className="mt-10 mb-3 text-lg font-medium text-gray-700"
+          className="mt-10 mb-3 text-lg font-medium text-gray-700 dark:text-gray-100"
           id="thought"
         >
           🤔 Thought
@@ -218,7 +225,7 @@ function HomePage({ posts }: { posts: Post[] }) {
         />
 
         <h3
-          className="mt-10 mb-3 text-lg font-medium text-gray-700"
+          className="mt-10 mb-3 text-lg font-medium text-gray-700 dark:text-gray-100"
           id="others"
         >
           🤪 Others

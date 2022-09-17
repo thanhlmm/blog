@@ -1,11 +1,14 @@
+const colors = require('tailwindcss/colors');
+
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class", // or 'media' or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
   plugins: [require("@tailwindcss/forms"), require("@tailwindcss/line-clamp")],
+  theme: {
+    extend: {
+      colors: {
+        gray: colors.neutral,
+      }
+    },
+  }
 };
