@@ -130,37 +130,37 @@ function HomePage({ posts }: { posts: Post[] }) {
       <div className="my-4 space-x-2">
         <a
           href="#new"
-          className="inline-flex items-center px-3 py-1 mb-2 mr-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700"
+          className="inline-flex items-center px-3 py-1 mb-2 mr-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700"
         >
           ✨ New
         </a>
         <a
           href="#engineer"
-          className="inline-flex items-center px-3 py-1 mb-2 mr-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700"
+          className="inline-flex items-center px-3 py-1 mb-2 mr-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700"
         >
           👨‍💻 Engineer
         </a>
         <a
           href="#blockchain"
-          className="inline-flex items-center px-3 py-1 mb-2 mr-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700"
+          className="inline-flex items-center px-3 py-1 mb-2 mr-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700"
         >
           ⛓ Blockchain
         </a>
         <a
           href="#product"
-          className="inline-flex items-center px-3 py-1 mb-2 mr-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700"
+          className="inline-flex items-center px-3 py-1 mb-2 mr-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700"
         >
           🚀 Product
         </a>
         <a
           href="#thought"
-          className="inline-flex items-center px-3 py-1 mb-2 mr-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700"
+          className="inline-flex items-center px-3 py-1 mb-2 mr-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700"
         >
           🤔 Thought
         </a>
         <a
           href="#others"
-          className="inline-flex items-center px-3 py-1 mb-2 mr-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700"
+          className="inline-flex items-center px-3 py-1 mb-2 mr-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700"
         >
           🤪 Others
         </a>
