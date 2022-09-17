@@ -47,7 +47,9 @@ export default function Header() {
               <div className="flex">
                 <div className="flex items-center flex-shrink-0">
                   <Link href="/">
-                    <a>ThanhLe's blog</a>
+                    <a className="text-gray-900  dark:text-gray-50">
+                      ThanhLe's blog
+                    </a>
                   </Link>
                 </div>
                 <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
