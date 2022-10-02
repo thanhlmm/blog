@@ -88,7 +88,7 @@ const MePage = () => {
           </a>
           <a
             className="text-indigo-600"
-            href="https://twitter.com/cuthanh15"
+            href="https://twitter.com/thanhledev"
             target="_blank"
             rel="noopener noreferrer"
           >
