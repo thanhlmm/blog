@@ -218,7 +218,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
           overflow: hidden;
           width: 100%;
         }
-        
+
         .notion-bookmark-title {
           font-weight: 500;
         }
@@ -238,7 +238,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
           --fg-color-6: #fff;
           --fg-color-icon: #fff;
 
-          --bg-color: #111827;
+          --bg-color: #18181b;
           --bg-color-0: rgb(71, 76, 80);
           --bg-color-1: rgb(63, 68, 71);
           --bg-color-2: rgba(135, 131, 120, 0.15);
