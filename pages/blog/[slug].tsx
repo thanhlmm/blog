@@ -183,6 +183,22 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
             "Segoe UI Symbol", "Noto Color Emoji";
         }
 
+        .notion img {
+          position: relative;
+          
+        }
+
+        .notion img::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: white;
+        }
+
         .notion-list li {
           padding-top: 2px;
         }
