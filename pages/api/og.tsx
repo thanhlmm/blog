@@ -74,8 +74,8 @@ export default function (req: NextRequest) {
       </div>
     ),
     {
-      width: 800,
-      height: 350,
+      width: 1200 / 2,
+      height: 630 / 2,
     }
   );
 }
