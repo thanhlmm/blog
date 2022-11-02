@@ -23,7 +23,7 @@ export default function (req: NextRequest) {
           alignItems: "center",
           justifyContent: "center",
           backgroundColor: "white",
-          padding: "20px",
+          padding: "10px",
           position: "relative",
         }}
       >
@@ -31,9 +31,9 @@ export default function (req: NextRequest) {
           <div tw="flex flex-col p-8 h-full w-full">
             <div tw="justify-between flex">
               <div tw="flex flex-col justify-between">
-                <h3 tw="text-xl font-bold text-gray-900">{title}</h3>
+                <h3 tw="mt-1 text-xl font-bold text-gray-900">{title}</h3>
 
-                <p tw="mt-1 text-xs font-medium text-gray-600">By Thanh Le</p>
+                <p tw="mt-0 text-xs font-medium text-gray-600">By Thanh Le</p>
               </div>
 
               <div tw="flex-shrink-0 hidden ml-3 sm:block">
@@ -46,11 +46,11 @@ export default function (req: NextRequest) {
               </div>
             </div>
 
-            <div tw="flex mt-4 sm:pr-8">
+            <div tw="flex mt-2 sm:pr-8">
               <p tw="text-sm text-gray-500">{description}</p>
             </div>
 
-            <div tw="flex mt-6">
+            <div tw="flex mt-3">
               <div tw="flex flex-col">
                 <dt tw="text-xs text-gray-500">Published</dt>
                 <dd tw="text-sm font-medium text-gray-600 ">{publishedDate}</dd>
