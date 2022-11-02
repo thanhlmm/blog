@@ -14,6 +14,7 @@ import { getAllPosts, Post } from "../";
 // import ReactGiscus from "../../components/comment-v3";
 
 import dynamic from "next/dynamic";
+import dayjs from "dayjs";
 // import { useRouter } from "next/router";
 
 const ReactGiscus = dynamic(() => import("../../components/comment-v3"), {
@@ -78,9 +79,13 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
 
   const ogImage =
     post.hero_image?.[0].url ||
-    `https://ogsupa.com/api/v1?title=${post.title}&description=${
+    `https://thanhle.blog/api/og?title=${encodeURI(
+      post.title
+    )}&description=${encodeURI(
       post.description || ""
-    }&&&&background_color=%23056eaa&font_style=font-sans&left_meta=%40cuthanh15&right_meta=thanhle.blog`;
+    )}&publishedDate=${encodeURI(
+      dayjs(post.date, "YYYY-MM-DD").format("MMM DD, YYYY")
+    )}`;
 
   return (
     // <TwitterContextProvider
@@ -185,7 +190,6 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
 
         .notion img {
           position: relative;
-          
         }
 
         .notion img::after {
