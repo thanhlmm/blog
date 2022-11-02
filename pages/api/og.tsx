@@ -10,7 +10,7 @@ export default function (req: NextRequest) {
   const title = searchParams.get("title") || "Title";
   const description = searchParams.get("description") || "";
   const publishedDate =
-    searchParams.get("description") || new Date().toLocaleDateString();
+    searchParams.get("publishedDate") || new Date().toLocaleDateString();
 
   return new ImageResponse(
     (
@@ -56,15 +56,19 @@ export default function (req: NextRequest) {
                 <dd tw="text-sm font-medium text-gray-600 ">{publishedDate}</dd>
               </div>
 
-              <div tw="flex flex-col ml-3 sm:ml-6">
+              <div tw="flex flex-col ml-12">
                 <div tw="text-xs text-gray-500">Reading time</div>
                 <dd tw="text-sm font-medium text-gray-600">5 minutes</dd>
               </div>
             </div>
           </div>
           <div
-            tw="absolute bottom-0 w-full h-2 bg-blue-500"
-            style={{ width: "100%" }}
+            tw="absolute bottom-0 w-full h-3 rounded-b-lg"
+            style={{
+              width: "100%",
+              backgroundImage:
+                "linear-gradient(90deg, rgb(0, 124, 240), rgb(0, 223, 216))",
+            }}
           ></div>
         </div>
       </div>
