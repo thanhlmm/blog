@@ -37,8 +37,8 @@ const Footer = () => {
                         buổi chia sẻ về Career và Mindset và một chút về
                         Blockchain
                       </a>{" "}
-                      khi đi làm vào thứ 2, mọi người vào nghe thử xem thằng
-                      Thành này nghĩ gì nhé!
+                      vào thứ 2, mọi người vào nghe thử xem thằng Thành này nghĩ
+                      gì nhé!
                     </span>
                   </p>
                 </div>
