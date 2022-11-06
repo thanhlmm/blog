@@ -34,7 +34,7 @@ const Footer = () => {
                         className="underline underline-offset-2 "
                         href="https://discord.com/events/462663954813157376/1038479856998031521"
                       >
-                        buổi chia sẻ về Career và Mindset và một chút về
+                        buổi chia sẻ về Career, Mindset và một chút về
                         Blockchain
                       </a>{" "}
                       vào thứ 2, mọi người vào nghe thử xem thằng Thành này nghĩ
