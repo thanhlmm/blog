@@ -47,7 +47,7 @@ export default function (req: NextRequest) {
             </div>
 
             <div tw="flex mt-2 sm:pr-8">
-              <p tw="text-sm text-gray-500">{description}</p>
+              <p tw="text-sm">{description}</p>
             </div>
 
             <div tw="flex mt-3">
