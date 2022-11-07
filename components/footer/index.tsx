@@ -32,7 +32,7 @@ const Footer = () => {
                       Mình có{" "}
                       <a
                         className="underline underline-offset-2 "
-                        href="https://discord.com/events/462663954813157376/1038479856998031521"
+                        href="https://www.facebook.com/thanh.lmm/posts/pfbid025PW9qQXq9rSzmXMrbe7JmjHZZQ3DzYnvGbBYu325BwqVY4BEE13SazToTTLncQ3Rl?__cft__[0]=AZWgh-nZ7ZYeNvkoMuER9uJfTTbVHSe8RS2r1Ov673Z1g6_qzyYJrz5LA7e0ycPYjb8SEbJNIP6BmrUim4Lv3oRoNeAVXeU_Vdzozp_kN8_2ltR79zwCmCjlb7il7pS3jLCxg0pc9pRpIhf0EtTw3swLnSdwgnTgveuJXcT6pLzri2WhWzHowIzVQF8w9B3J0s4&__tn__=%2CO%2CP-R"
                       >
                         buổi chia sẻ về Career, Mindset và một chút về
                         Blockchain
