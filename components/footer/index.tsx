@@ -2,7 +2,7 @@ import { XIcon } from "@heroicons/react/outline";
 import { useState } from "react";
 
 const Footer = () => {
-  const [showBanner, toogleShowBanner] = useState(true);
+  const [showBanner, toogleShowBanner] = useState(false);
 
   return (
     <>
