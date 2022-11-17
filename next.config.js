@@ -11,6 +11,10 @@ module.exports = {
         source: "/_hive/:slug",
         destination: "https://hive.splitbee.io/:slug",
       },
+      {
+        source: "/rss",
+        destination: "/api/rss",
+      },
     ];
   },
   i18n,
