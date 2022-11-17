@@ -18,6 +18,7 @@
     "dayjs": "^1.10.7",
     "lodash-es": "^4.17.21",
     "next": "12.3.2",
+    "next-connect": "^0.13.0",
     "next-i18next": "^10.0.1",
     "notion-client": "^4.14.1",
     "react": "^16.12.0",
