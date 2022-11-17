@@ -298,9 +298,10 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
 };
 
 export async function getStaticPaths({ locale }: { locale: any }) {
-  const table = await getAllPosts({ locale });
+  // const table = await getAllPosts({ locale });
   return {
-    paths: table.map((row) => `/blog/${row.slug}`),
+    // paths: table.map((row) => `/blog/${row.slug}`),
+    paths: [],
     fallback: "blocking",
   };
 }
