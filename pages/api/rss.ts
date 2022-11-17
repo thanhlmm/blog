@@ -19,7 +19,7 @@ const toAbsoluteUrl = (slug: string) => `https://thanhle.blog/blog/${slug}`;
  * @param {object} req NextApiRequest
  * @param {object} res NextApiResponse
  */
-handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
+handler.get(async (_req: NextApiRequest, res: NextApiResponse) => {
   const posts = await getAllPosts({ locale: 'vi', includeDraft: false });
 
   try {
