@@ -97,6 +97,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
     //     },
     //   }}
     // >
+    // </TwitterContextProvider>
     <div className="px-4 mx-auto mt-10 font-sans sm:px-6 lg:px-8">
       <Head>
         <title>📝 {post.title}</title>
@@ -114,7 +115,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
           <Link
             href={`/blog/${post.linkRelatived}`}
             locale={post.lang === "en" ? "vi" : "en"}
-          >
+            legacyBehavior>
             <a className="text-indigo-700">
               {" "}
               https://thanhle.blog/blog/{post.linkRelatived}
@@ -293,7 +294,6 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
         }
       `}</style>
     </div>
-    // </TwitterContextProvider>
   );
 };
 

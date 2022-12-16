@@ -19,23 +19,30 @@ interface Project {
 
 export const getAllProjects = async (): Promise<Project[]> => {
   return await fetch(
-    `https://notion.thanhle.workers.dev/v1/table/${NOTION_PROJECTS_ID}`
+    `https://notion.thanhle.workers.dev/v1/table/${NOTION_PROJECTS_ID}`,
+    {
+      next: { revalidate: 60 * 5 },
+    }
   ).then((res) => res.json());
 };
 
-export async function getStaticProps() {
-  // Get all posts again
+// export async function getStaticProps() {
+//   // Get all posts again
+//   const projects = await getAllProjects();
+
+//   return {
+//     props: {
+//       projects,
+//     },
+//     revalidate: 60 * 5,
+//   };
+// }
+
+export const revalidate = 60 * 5;
+
+const ProjectPage = async () => {
   const projects = await getAllProjects();
 
-  return {
-    props: {
-      projects,
-    },
-    revalidate: 60 * 5,
-  };
-}
-
-const ProjectPage = ({ projects }: { projects: Project[] }) => {
   return (
     <div>
       <Head>

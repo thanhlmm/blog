@@ -13,6 +13,9 @@ module.exports = {
       },
     ];
   },
+  experimental: {
+    appDir: true,
+  },
   i18n,
   images: {
     domains: ['pbs.twimg.com']

@@ -1,10 +1,8 @@
+"use client";
 import Head from "next/head";
-import { AppProps } from "next/app";
 import splitbee from "@splitbee/web";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import { appWithTranslation } from "next-i18next";
-
 import { QueryClientProvider } from "@tanstack/react-query";
 
 import "../styles/globals.css";
@@ -15,7 +13,7 @@ splitbee.init({
   apiUrl: "/_hive",
 });
 
-function App({ Component, pageProps }: AppProps) {
+const Layout: React.FC = ({ children }) => {
   return (
     <div>
       <Head>
@@ -65,12 +63,11 @@ function App({ Component, pageProps }: AppProps) {
         ></script>
       </Head>
       <Header />
-      <QueryClientProvider client={queryClient}>
-        <Component {...pageProps} />
-      </QueryClientProvider>
+      {children}
+      {/* <QueryClientProvider client={queryClient}>{children}</QueryClientProvider> */}
       <Footer />
     </div>
   );
-}
+};
 
-export default appWithTranslation(App);
+export default Layout;
