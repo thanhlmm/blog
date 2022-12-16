@@ -10,11 +10,11 @@ const Footer = () => {
         <p className="text-center">
           Follow me{" "}
           <a
-            href="https://twitter.com/cuthanh15"
+            href="https://twitter.com/thanhledev"
             className="text-blue-600"
             target="_blank"
           >
-            @cuthanh15
+            @thanhledev
           </a>
         </p>
       </div>
