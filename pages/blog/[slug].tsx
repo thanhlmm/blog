@@ -297,7 +297,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
   );
 };
 
-export async function getStaticPaths({ locale }: { locale: any }) {
+export async function getStaticPaths() {
   // const table = await getAllPosts({ locale });
   return {
     // paths: table.map((row) => `/blog/${row.slug}`),
