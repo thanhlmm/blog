@@ -1,4 +1,4 @@
-import { XIcon } from "@heroicons/react/outline";
+// import { XIcon } from "@heroicons/react/outline";
 import { useEffect, useState } from "react";
 
 const Footer = () => {
