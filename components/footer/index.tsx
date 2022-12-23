@@ -32,10 +32,12 @@ const Footer = () => {
       >
         <div className="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="p-1 bg-white border border-green-500 rounded-lg shadow-lg dark:bg-gray-700 border-1 sm:p-2">
-            <div className="flex flex-wrap items-center justify-between">
-              <div className="flex items-center flex-1 w-0 mx-3">
-                <span className="flex p-1 text-2xl rounded-lg">🤓</span>
-                <p className="ml-3 font-medium text-green-600">
+            <div className="flex flex-col flex-wrap items-center justify-between md:flex-row">
+              <div className="flex items-center flex-1 m-3">
+                <span className="hidden p-1 text-2xl rounded-lg md:flex">
+                  🤓
+                </span>
+                <p className="font-medium text-green-600 md:ml-3">
                   <span>
                     Thứ 7 (24-12) lúc 9 giờ sáng mình có buổi workshop nhỏ chia
                     sẻ cách viết Smart Contract dùng Solidity, target là chỉ cần
@@ -44,7 +46,7 @@ const Footer = () => {
                   </span>
                 </p>
               </div>
-              <div className="flex-shrink-0 order-2 mr-2 sm:order-3 sm:ml-2">
+              <div className="flex-shrink-0 order-2 my-1 mr-2 sm:order-3 sm:ml-2 md:mt-0">
                 <a
                   type="button"
                   href="https://discord.gg/Ay9PtBVe?event=1054623077788565575"
