@@ -2,11 +2,11 @@
 import { useEffect, useState } from "react";
 
 const Footer = () => {
-  const [showBanner, toogleShowBanner] = useState(false);
+  const [showBanner] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
-      toogleShowBanner(true);
+      // toogleShowBanner(true);
     }, 1000);
   }, []);
 
