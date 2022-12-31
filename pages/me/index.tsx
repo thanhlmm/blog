@@ -46,6 +46,11 @@ const MePage = () => {
               <strong>Freedom</strong> - I think all the way road to freedom. So
               I want to have freedom and everyone around me can feel its value
             </li>
+            <li>
+              <strong>Fair</strong> - It is fundimental of building a long term
+              relationship. PPL might come and go, but fair make us go longer
+              and happier
+            </li>
           </ul>
         </div>
       </div>
