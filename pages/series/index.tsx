@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import { GetStaticProps } from "next";
+import Head from "next/head";
 import Link from "next/link";
 import { getAllPosts, Post } from "..";
 
@@ -50,6 +51,13 @@ const Series: React.FC<ISeriesProps> = ({ series }) => {
   console.log(series);
   return (
     <div className="max-w-5xl p-2 mx-auto mt-4">
+      <Head>
+        <title>📽 Series</title>
+        <meta
+          name="description"
+          content="I put some of my posts in series so you can read it with more context 🥰"
+        />
+      </Head>
       <div className="mt-4 mb-6 text-gray-700 dark:text-gray-100">
         I put some of my posts in series so you can read it with more context 🥰
       </div>
