@@ -12,6 +12,7 @@ const user = {
 };
 const navigation = [
   { name: "📝 Blog", href: "/" },
+  { name: "📽 Series", href: "/series" },
   { name: "📚 Reading list", href: "/reading-list" },
   { name: "💡 Projects", href: "/project" },
   { name: "🤷‍♂️ Me", href: "/me" },
@@ -53,7 +54,7 @@ export default function Header() {
                   </Link>
                 </div>
                 <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
-                  {navigation.map((item) => (
+                  {navigation.map((item, index) => (
                     <Link key={item.name} href={item.href}>
                       <a
                         className={classNames(
@@ -65,6 +66,19 @@ export default function Header() {
                         aria-current={router.pathname.includes(item.href)}
                       >
                         {item.name}
+
+                        {index === 1 && (
+                          <span className="inline-flex ml-2 items-center rounded bg-red-100 px-2 py-0.5 text-xs font-medium text-red-800">
+                            <svg
+                              className="mr-1.5 h-2 w-2 "
+                              fill="currentColor"
+                              viewBox="0 0 8 8"
+                            >
+                              <circle cx="4" cy="4" r="3" />
+                            </svg>{" "}
+                            New
+                          </span>
+                        )}
                       </a>
                     </Link>
                   ))}
@@ -152,7 +166,7 @@ export default function Header() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="pt-2 pb-3 space-y-1">
-              {navigation.map((item) => (
+              {navigation.map((item, index) => (
                 <Link key={item.name} href={item.href}>
                   <a
                     key={item.name}
@@ -166,6 +180,19 @@ export default function Header() {
                     aria-current={router.pathname.includes(item.href)}
                   >
                     {item.name}
+
+                    {index === 1 && (
+                      <span className="inline-flex ml-2 items-center rounded bg-red-100 px-2 py-0.5 text-xs font-medium text-red-800">
+                        <svg
+                          className="mr-1.5 h-2 w-2 "
+                          fill="currentColor"
+                          viewBox="0 0 8 8"
+                        >
+                          <circle cx="4" cy="4" r="3" />
+                        </svg>
+                        New
+                      </span>
+                    )}
                   </a>
                 </Link>
               ))}

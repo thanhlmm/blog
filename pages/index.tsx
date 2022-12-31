@@ -17,6 +17,7 @@ export type Post = {
   lang: "en" | "vi";
   description?: string;
   linkRelatived?: string;
+  series: string[];
   hero_image: {
     url: string;
   }[];
