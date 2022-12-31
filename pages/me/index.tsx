@@ -48,8 +48,8 @@ const MePage = () => {
             </li>
             <li>
               <strong>Fair</strong> - It is fundimental of building a long term
-              relationship. PPL might come and go, but fair make us go longer
-              and happier
+              relationship. PPL comes and goes, but fair make us go longer and
+              happier
             </li>
           </ul>
         </div>
