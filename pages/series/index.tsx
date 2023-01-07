@@ -48,7 +48,6 @@ interface ISeriesProps {
 }
 
 const Series: React.FC<ISeriesProps> = ({ series }) => {
-  console.log(series);
   return (
     <div className="max-w-5xl p-2 mx-auto mt-4">
       <Head>
