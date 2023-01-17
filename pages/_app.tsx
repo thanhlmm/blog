@@ -4,6 +4,7 @@ import splitbee from "@splitbee/web";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import { appWithTranslation } from "next-i18next";
+import { Analytics } from '@vercel/analytics/react';
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -71,6 +72,7 @@ function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </QueryClientProvider>
       <Footer />
+      <Analytics />
     </div>
   );
 }
