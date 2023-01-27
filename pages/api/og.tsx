@@ -31,10 +31,6 @@ export default function (req: NextRequest) {
         <div tw="relative flex w-full h-full">
           <div tw="flex flex-col p-8 h-full w-full">
             <div tw="justify-between flex flex-col">
-              <div tw="flex flex-col justify-between">
-                <h3 tw="mt-1 text-4xl font-bold text-gray-900">{title}</h3>
-              </div>
-
               <div tw="flex mr-3 items-center">
                 <img
                   style={{ width: 64, height: 64 }}
@@ -46,6 +42,10 @@ export default function (req: NextRequest) {
                 <div tw="mt-0 ml-4 text-xl font-medium text-gray-600">
                   Thanh Le
                 </div>
+              </div>
+
+              <div tw="flex flex-col justify-between mt-3">
+                <h3 tw="mt-1 text-4xl font-bold text-gray-900">{title}</h3>
               </div>
             </div>
 
