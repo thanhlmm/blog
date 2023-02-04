@@ -65,7 +65,7 @@ export default function Header() {
                       >
                         {item.name}
 
-                        {index === 1 && (
+                        {/* {index === 1 && (
                           <span className="inline-flex ml-2 items-center rounded bg-red-100 px-2 py-0.5 text-xs font-medium text-red-800">
                             <svg
                               className="mr-1.5 h-2 w-2 "
@@ -76,7 +76,7 @@ export default function Header() {
                             </svg>{" "}
                             New
                           </span>
-                        )}
+                        )} */}
                       </a>
                     </Link>
                   ))}
