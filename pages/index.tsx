@@ -126,7 +126,8 @@ function HomePage({ posts }: { posts: Post[] }) {
       ></iframe> */}
 
       <div className="mb-4 text-gray-700 dark:text-gray-100">
-        I share about Frontend, Engineer and some thought in Product and Life 😴
+        I share about Frontend, Engineer and some thoughts in Product and Life
+        😴
       </div>
 
       <div className="my-4 space-x-2">
