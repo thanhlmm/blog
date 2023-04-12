@@ -26,7 +26,7 @@ const Footer = () => {
       </div>
       <div
         className={[
-          "fixed inset-x-0 pb-2 sm:pb-5 transition-all",
+          "fixed z-50 inset-x-0 pb-2 sm:pb-5 transition-all",
           showBanner ? "bottom-0 opacity-100" : "bottom-[-30px] opacity-0",
         ].join(" ")}
       >
