@@ -17,7 +17,7 @@ const MePage = () => {
         <br />
         <div className="mt-4">
           <Image
-            src="/me.jpeg"
+            src="/me.png"
             alt="me"
             className="rounded-md"
             width="60"

@@ -8,7 +8,7 @@ import ThemeSwitcher from "../themeSwitcher";
 const user = {
   name: "Thanh Le",
   email: "mihthanh27@gmail.com",
-  imageUrl: "/me.jpeg",
+  imageUrl: "/me.png",
 };
 const navigation = [
   { name: "📝 Blog", href: "/" },
@@ -137,7 +137,7 @@ export default function Header() {
                       <a className="flex items-center max-w-xs text-sm bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         <span className="sr-only">Open user menu</span>
                         <Image
-                          src="/me.jpeg"
+                          src="/me.png"
                           className="rounded-md"
                           alt="me"
                           width="32"
@@ -230,7 +230,7 @@ export default function Header() {
               <div className="flex items-center px-4">
                 <div className="flex-shrink-0">
                   <Image
-                    src="/me.jpeg"
+                    src="/me.png"
                     alt="me"
                     className="rounded-md"
                     width="40"
