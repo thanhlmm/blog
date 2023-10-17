@@ -29,7 +29,10 @@ export const getTableData = async (
 
   const tableData = tableArr.filter(
     (b) =>
-      b.value && b.value.properties && b.value.parent_id === collection.value.id
+      b &&
+      b.value &&
+      b.value.properties &&
+      b.value.parent_id === collection.value.id
   );
 
   type Row = { id: string; [key: string]: RowContentType };

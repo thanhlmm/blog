@@ -21,7 +21,7 @@
     "next": "12.3.2",
     "next-connect": "^0.13.0",
     "next-i18next": "^10.0.1",
-    "notion-client": "^4.14.1",
+    "notion-client": "^6.16.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-hydration-on-demand": "^2.0.1",
