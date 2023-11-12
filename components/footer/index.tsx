@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 const Footer = () => {
   const [showBanner, toogleShowBanner] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      toogleShowBanner(true);
-    }, 1000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     toogleShowBanner(true);
+  //   }, 1000);
+  // }, []);
 
   return (
     <>
@@ -42,7 +42,7 @@ const Footer = () => {
                     Xin lỗi các bạn vì thời gian qua mình không dành thời gian
                     viết nhiều. Dạo này mình khá bận cho dự án{" "}
                     <a
-                      className=" text-blue-700"
+                      className="text-blue-700 "
                       href="https://getnimbus.io"
                       target="_blank"
                     >
