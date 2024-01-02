@@ -2,9 +2,16 @@ import Link from "next/link";
 import dayjs from "dayjs";
 import { GetStaticProps } from "next";
 import Head from "next/head";
+import { flatten } from "lodash-es";
 
 const NOTION_BLOG_ID =
   process.env.NOTION_BLOG_ID || "c0a9456d6fa04bb2af554a310ac7b5ff";
+
+const NOTION_BLOG_ID2 = "226164aaefda48579dda04761f51f39e";
+const blogIds = [
+  "c0a9456d6fa04bb2af554a310ac7b5ff",
+  "226164aaefda48579dda04761f51f39e",
+];
 
 type PostStatus = "Published" | "Draft";
 export type Post = {
@@ -27,26 +34,30 @@ export const getAllPosts = async ({
   locale = "",
   includeDraft = false,
 }): Promise<Post[]> => {
-  return await fetch(
-    `https://notion.thanhle.workers.dev/v1/table/${NOTION_BLOG_ID}`
-  )
-    .then((res) => res.json())
-    .then((res) =>
-      res
-        .filter((row: Post) => includeDraft || row.status === "Published")
-        .filter((row: Post) => {
-          return locale
-            ? row.linkRelatived
-              ? row.lang === locale
-              : true
-            : true;
-        })
-        .sort(
-          (a: Post, b: Post) =>
-            dayjs(b.date, "YYYY-MM-DD").unix() -
-            dayjs(a.date, "YYYY-MM-DD").unix()
+  const postData = await Promise.all(
+    blogIds.map((blogId) =>
+      fetch(`https://notion.thanhle.workers.dev/v1/table/${blogId}`)
+        .then((res) => res.json())
+        .then((res) =>
+          res
+            .filter((row: Post) => includeDraft || row.status === "Published")
+            .filter((row: Post) => {
+              return locale
+                ? row.linkRelatived
+                  ? row.lang === locale
+                  : true
+                : true;
+            })
         )
-    );
+    )
+  );
+
+  const allPost = flatten(postData).sort(
+    (a: Post, b: Post) =>
+      dayjs(b.date, "YYYY-MM-DD").unix() - dayjs(a.date, "YYYY-MM-DD").unix()
+  );
+
+  return allPost;
 };
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
