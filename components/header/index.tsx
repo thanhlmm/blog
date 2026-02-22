@@ -198,7 +198,7 @@ export default function Header() {
             <div className="flex items-center pt-2 pb-3 pl-3">
               <ThemeSwitcher /> <span className="ml-2">Dark mode</span>
             </div>
-            <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-600">
+            {/* <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-600">
               <div className="px-4 space-x-3">
                 <a
                   onClick={(e) => handleChangeLang(e, "en")}
@@ -225,7 +225,7 @@ export default function Header() {
                   Tiếng Việt
                 </a>
               </div>
-            </div>
+            </div> */}
             <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-600">
               <div className="flex items-center px-4">
                 <div className="flex-shrink-0">
