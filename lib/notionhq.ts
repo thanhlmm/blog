@@ -41,6 +41,7 @@ export const getNotionValue = (property: any) => {
 };
 
 export const fetchDatabase = async (databaseId: string) => {
+
     let results: any[] = [];
     let cursor: string | undefined = undefined;
 

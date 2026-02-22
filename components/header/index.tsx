@@ -86,7 +86,7 @@ export default function Header() {
                 <div className="pt-3 pb-2">
                   <ThemeSwitcher />
                 </div>
-                <div className="relative ml-3">
+                {/* <div className="relative ml-3">
                   <div className="space-x-3">
                     <a
                       onClick={(e) => handleChangeLang(e, "en")}
@@ -113,7 +113,7 @@ export default function Header() {
                       Tiếng Việt
                     </a>
                   </div>
-                </div>
+                </div> */}
                 <div className="mx-4 text-sm font-medium text-orange-500">
                   <a href="/rss" target="_blank">
                     <svg
