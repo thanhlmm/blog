@@ -47,37 +47,37 @@ export default function Header() {
             <div className="flex justify-between h-12">
               <div className="flex">
                 <div className="flex items-center flex-shrink-0">
-                  <Link href="/">
-                    <a className="text-gray-900 dark:text-gray-50">Thanh Le</a>
+                  <Link href="/" className="text-gray-900 dark:text-gray-50">
+                    Thanh Le
                   </Link>
                 </div>
                 <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
                   {navigation.map((item, index) => (
-                    <Link key={item.name} href={item.href}>
-                      <a
-                        className={classNames(
-                          router.pathname === item.href
-                            ? "border-blue-500 text-gray-900 dark:text-white"
-                            : "border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 hover:text-gray-700",
-                          "inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                        )}
-                        aria-current={router.pathname.includes(item.href)}
-                      >
-                        {item.name}
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className={classNames(
+                        router.pathname === item.href
+                          ? "border-blue-500 text-gray-900 dark:text-white"
+                          : "border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 hover:text-gray-700",
+                        "inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                      )}
+                      aria-current={router.pathname.includes(item.href)}>
 
-                        {/* {index === 1 && (
-                          <span className="inline-flex ml-2 items-center rounded bg-red-100 px-2 py-0.5 text-xs font-medium text-red-800">
-                            <svg
-                              className="mr-1.5 h-2 w-2 "
-                              fill="currentColor"
-                              viewBox="0 0 8 8"
-                            >
-                              <circle cx="4" cy="4" r="3" />
-                            </svg>{" "}
-                            New
-                          </span>
-                        )} */}
-                      </a>
+                      {item.name}
+                      {/* {index === 1 && (
+                        <span className="inline-flex ml-2 items-center rounded bg-red-100 px-2 py-0.5 text-xs font-medium text-red-800">
+                          <svg
+                            className="mr-1.5 h-2 w-2 "
+                            fill="currentColor"
+                            viewBox="0 0 8 8"
+                          >
+                            <circle cx="4" cy="4" r="3" />
+                          </svg>{" "}
+                          New
+                        </span>
+                      )} */}
+
                     </Link>
                   ))}
                 </div>
@@ -133,17 +133,19 @@ export default function Header() {
                 </div>
                 <div className="relative ml-3">
                   <div>
-                    <Link href="/me">
-                      <a className="flex items-center max-w-xs text-sm bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                        <span className="sr-only">Open user menu</span>
-                        <Image
-                          src="/me.png"
-                          className="rounded-md"
-                          alt="me"
-                          width="32"
-                          height="32"
-                        />
-                      </a>
+                    <Link
+                      href="/me"
+                      className="flex items-center max-w-xs text-sm bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+
+                      <span className="sr-only">Open user menu</span>
+                      <Image
+                        src="/me.png"
+                        className="rounded-md"
+                        alt="me"
+                        width="32"
+                        height="32"
+                      />
+
                     </Link>
                   </div>
                 </div>
@@ -165,33 +167,31 @@ export default function Header() {
           <Disclosure.Panel className="sm:hidden">
             <div className="pt-2 pb-3 space-y-1">
               {navigation.map((item, index) => (
-                <Link key={item.name} href={item.href}>
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className={classNames(
-                      router.pathname === item.href
-                        ? "bg-blue-50 border-blue-500 text-blue-700 dark:bg-gray-700 dark:text-white"
-                        : "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 dark:text-gray-400 dark:hover:bg-gray-700",
-                      "block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
-                    )}
-                    aria-current={router.pathname.includes(item.href)}
-                  >
-                    {item.name}
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={classNames(
+                    router.pathname === item.href
+                      ? "bg-blue-50 border-blue-500 text-blue-700 dark:bg-gray-700 dark:text-white"
+                      : "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 dark:text-gray-400 dark:hover:bg-gray-700",
+                    "block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                  )}
+                  aria-current={router.pathname.includes(item.href)}>
 
-                    {index === 1 && (
-                      <span className="inline-flex ml-2 items-center rounded bg-red-100 px-2 py-0.5 text-xs font-medium text-red-800">
-                        <svg
-                          className="mr-1.5 h-2 w-2 "
-                          fill="currentColor"
-                          viewBox="0 0 8 8"
-                        >
-                          <circle cx="4" cy="4" r="3" />
-                        </svg>
-                        New
-                      </span>
-                    )}
-                  </a>
+                  {item.name}
+                  {index === 1 && (
+                    <span className="inline-flex ml-2 items-center rounded bg-red-100 px-2 py-0.5 text-xs font-medium text-red-800">
+                      <svg
+                        className="mr-1.5 h-2 w-2 "
+                        fill="currentColor"
+                        viewBox="0 0 8 8"
+                      >
+                        <circle cx="4" cy="4" r="3" />
+                      </svg>
+                      New
+                    </span>
+                  )}
+
                 </Link>
               ))}
             </div>

@@ -78,11 +78,11 @@ const Series: React.FC<ISeriesProps> = ({ series }) => {
                   {dayjs(post.date, "YYYY-MM-DD").format("MMM DD, YYYY")}
                 </time>
                 <Link href={`/blog/${post.slug}`} locale={post.lang}>
-                  <a>
-                    <h3 className="mb-1 font-medium text-blue-600 dark:text-blue-500">
-                      {post.title}
-                    </h3>
-                  </a>
+
+                  <h3 className="mb-1 font-medium text-blue-600 dark:text-blue-500">
+                    {post.title}
+                  </h3>
+
                 </Link>
                 <p className="mb-2 text-sm font-normal text-gray-500 dark:text-gray-400">
                   {post.description}

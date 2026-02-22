@@ -97,6 +97,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
     //     },
     //   }}
     // >
+    // </TwitterContextProvider>
     <div className="px-4 mx-auto mt-10 font-sans sm:px-6 lg:px-8">
       <Head>
         <title>📝 {post.title}</title>
@@ -114,15 +115,13 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
           <Link
             href={`/blog/${post.linkRelatived}`}
             locale={post.lang === "en" ? "vi" : "en"}
-          >
-            <a className="text-indigo-700">
-              {" "}
-              https://thanhle.blog/blog/{post.linkRelatived}
-            </a>
+            className="text-indigo-700">
+
+            {" "}https://thanhle.blog/blog/{post.linkRelatived}
+
           </Link>
         </div>
       )}
-
       <article>
         <NotionRenderer
           components={{
@@ -141,7 +140,6 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
           minTableOfContentsItems={3}
         />
       </article>
-
       <div>
         <iframe
           src="https://thanhleblg.substack.com/embed"
@@ -153,7 +151,6 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
           loading="lazy"
         ></iframe>
       </div>
-
       <div className="max-w-5xl mx-auto">
         <ReactGiscus
           repo="thanhlmm/blog"
@@ -178,7 +175,6 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
           /> */}
         {/* <CommentComponent /> */}
       </div>
-
       <style global jsx>{`
         .notion {
           font-size: 18px;
@@ -293,7 +289,6 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
         }
       `}</style>
     </div>
-    // </TwitterContextProvider>
   );
 };
 

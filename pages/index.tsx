@@ -82,34 +82,34 @@ const PostList = ({ posts }: { posts: Post[] }) => {
           {dayjs(post.date, "YYYY-MM-DD").isAfter(
             dayjs().subtract(14, "d")
           ) && <div className="absolute text-xl top-2 right-2">✨</div>}
-          <Link href={`/blog/${post.slug}`} locale={post.lang}>
-            <a className="block">
-              <div className="px-4 py-4 sm:px-6">
-                <div className="flex items-center mb-2 text-xs text-gray-500 dark:text-gray-100">
-                  <time dateTime={post.date}>
-                    {dayjs(post.date, "YYYY-MM-DD").format("MMM DD, YYYY")}
-                  </time>
-                </div>
-                <div className="flex text-sm">
-                  <p className="mb-3 font-medium text-blue-600 dark:text-blue-500">
-                    {post.title}
-                  </p>
-                </div>
-                <div className="text-sm text-gray-600 dark:text-gray-50">
-                  {post.description}
-                </div>
-                {/* <div className="space-x-1">
-                  {post.tag?.map((tag) => (
-                    <span
-                      key={tag}
-                      className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-yellow-100 text-yellow-800"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div> */}
+          <Link href={`/blog/${post.slug}`} locale={post.lang} className="block">
+
+            <div className="px-4 py-4 sm:px-6">
+              <div className="flex items-center mb-2 text-xs text-gray-500 dark:text-gray-100">
+                <time dateTime={post.date}>
+                  {dayjs(post.date, "YYYY-MM-DD").format("MMM DD, YYYY")}
+                </time>
               </div>
-            </a>
+              <div className="flex text-sm">
+                <p className="mb-3 font-medium text-blue-600 dark:text-blue-500">
+                  {post.title}
+                </p>
+              </div>
+              <div className="text-sm text-gray-600 dark:text-gray-50">
+                {post.description}
+              </div>
+              {/* <div className="space-x-1">
+                {post.tag?.map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-yellow-100 text-yellow-800"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div> */}
+            </div>
+
           </Link>
         </div>
       ))}
