@@ -13,7 +13,7 @@ const user = {
 const navigation = [
   { name: "📝 Blog", href: "/" },
   { name: "📽 Series", href: "/series" },
-  { name: "📚 Reading list", href: "/reading-list" },
+  // { name: "📚 Reading list", href: "/reading-list" },
   { name: "💡 Projects", href: "/project" },
   { name: "🤷‍♂️ Me", href: "/me" },
 ];

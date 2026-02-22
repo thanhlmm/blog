@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import { fetchDatabase } from "../../lib/notionhq";
 
 const NOTION_PROJECTS_ID =
   process.env.NOTION_PROJECTS_ID || "9901f946476843c98b1d47a730297c7f";
@@ -18,9 +19,7 @@ interface Project {
 }
 
 export const getAllProjects = async (): Promise<Project[]> => {
-  return await fetch(
-    `https://notion.thanhle.workers.dev/v1/table/${NOTION_PROJECTS_ID}`
-  ).then((res) => res.json());
+  return await fetchDatabase(NOTION_PROJECTS_ID);
 };
 
 export async function getStaticProps() {
@@ -150,7 +149,7 @@ const ProjectPage = ({ projects }: { projects: Project[] }) => {
                       <a href={prj.url} target="_blank">
                         <img
                           className="w-full shadow-xl rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                          src={prj.image?.[0].url}
+                          src={prj.image?.[0]?.url}
                           alt={prj.description}
                           loading="lazy"
                         />
@@ -209,7 +208,7 @@ const ProjectPage = ({ projects }: { projects: Project[] }) => {
                   <div className="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
                     <img
                       className="w-full shadow-xl rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
-                      src={prj.image?.[0].url}
+                      src={prj.image?.[0]?.url}
                       alt="Customer profile user interface"
                     />
                   </div>

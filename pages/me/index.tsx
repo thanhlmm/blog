@@ -93,7 +93,7 @@ const MePage = () => {
           </a>
           <a
             className="text-indigo-600"
-            href="https://twitter.com/thanhledev"
+            href="https://twitter.com/0xthanhle"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -127,7 +127,7 @@ const MePage = () => {
           frameBorder="0"
           title="ThanhLe.blog feedbacks"
         ></iframe>
-        {/* <iframe
+        {/* <iframeR
           allowTransparency
           allowFullScreen
           allow="geolocation; microphone; camera"

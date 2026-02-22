@@ -78,7 +78,7 @@ const BlogPost: React.FC<{ post: Post; blocks: any }> = ({ post, blocks }) => {
   if (!post) return null;
 
   const ogImage =
-    post.hero_image?.[0].url ||
+    post.hero_image?.[0]?.url ||
     `https://thanhle.blog/api/og?title=${encodeURI(
       post.title
     )}&description=${encodeURI(

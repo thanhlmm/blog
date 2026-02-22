@@ -3,6 +3,7 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { getAllPosts, Post } from "..";
+import { fetchDatabase } from "../../lib/notionhq";
 
 const NOTION_SERIES_ID = "add24350028a4252921600ce553f99a8";
 
@@ -13,9 +14,7 @@ interface ISeries {
 }
 
 export const getSeries = async (): Promise<ISeries[]> => {
-  return await fetch(
-    `https://notion.thanhle.workers.dev/v1/table/${NOTION_SERIES_ID}`
-  ).then((res) => res.json());
+  return await fetchDatabase(NOTION_SERIES_ID);
 };
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {

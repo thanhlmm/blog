@@ -3,6 +3,7 @@ import dayjs from "dayjs";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import { flatten } from "lodash-es";
+import { fetchDatabase } from "../lib/notionhq";
 
 const NOTION_BLOG_ID =
   process.env.NOTION_BLOG_ID || "c0a9456d6fa04bb2af554a310ac7b5ff";
@@ -36,8 +37,7 @@ export const getAllPosts = async ({
 }): Promise<Post[]> => {
   const postData = await Promise.all(
     blogIds.map((blogId) =>
-      fetch(`https://notion.thanhle.workers.dev/v1/table/${blogId}`)
-        .then((res) => res.json())
+      fetchDatabase(blogId)
         .then((res) =>
           res
             .filter((row: Post) => includeDraft || row.status === "Published")
@@ -198,7 +198,7 @@ function HomePage({ posts }: { posts: Post[] }) {
         </h3>
         {/* <hr className="mb-4" /> */}
         <PostList
-          posts={posts.filter((post) => post.tag.includes("Engineer"))}
+          posts={posts.filter((post) => post.tag?.includes("Engineer"))}
         />
 
         <h3
@@ -209,7 +209,7 @@ function HomePage({ posts }: { posts: Post[] }) {
         </h3>
         {/* <hr className="mb-4" /> */}
         <PostList
-          posts={posts.filter((post) => post.tag.includes("Blockchain"))}
+          posts={posts.filter((post) => post.tag?.includes("Blockchain"))}
         />
 
         <h3
@@ -220,7 +220,7 @@ function HomePage({ posts }: { posts: Post[] }) {
         </h3>
         {/* <hr className="mb-4" /> */}
         <PostList
-          posts={posts.filter((post) => post.tag.includes("Product"))}
+          posts={posts.filter((post) => post.tag?.includes("Product"))}
         />
 
         <h3
@@ -233,7 +233,7 @@ function HomePage({ posts }: { posts: Post[] }) {
         <PostList
           posts={posts.filter(
             (post) =>
-              post.tag.includes("Thought") || post.tag.includes("Invest")
+              post.tag?.includes("Thought") || post.tag?.includes("Invest")
           )}
         />
 
@@ -248,11 +248,11 @@ function HomePage({ posts }: { posts: Post[] }) {
           posts={posts.filter((post, index) => {
             return (
               index > 6 &&
-              !post.tag.includes("Engineer") &&
-              !post.tag.includes("Blockchain") &&
-              !post.tag.includes("Product") &&
-              !post.tag.includes("Thought") &&
-              !post.tag.includes("Invest")
+              !post.tag?.includes("Engineer") &&
+              !post.tag?.includes("Blockchain") &&
+              !post.tag?.includes("Product") &&
+              !post.tag?.includes("Thought") &&
+              !post.tag?.includes("Invest")
             );
           })}
         />
